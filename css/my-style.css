@@ -1,0 +1,39 @@
+.successmessage {background-color: #b4e589; color: #3d621c; border: 1px solid #81ba4e; border-radius: 4px; margin-bottom: 20px; padding: 15px;	font-family:"proxima_nova",Arial, Helvetica, sans-serif; line-height:normal;}
+	
+.successmessage button.close{background: none repeat scroll 0 0 rgba(0, 0, 0, 0);font-size: 16px;  border: 0 none; cursor: pointer;  padding: 0;	color: #3d621c;   float: right;  font-size: 21px;  font-weight: 700;  line-height: 1;  opacity: 0.2;   text-shadow: 0 1px 0 #fff; height:auto; box-shadow:none;}
+
+.errormessage {background-color: #f7bebe; color: #852323; border: 1px solid #c55454; border-radius: 4px; margin-bottom: 20px; padding: 15px;	font-family:"proxima_nova",Arial, Helvetica, sans-serif; line-height:normal;}
+	
+.errormessage button.close{background: none repeat scroll 0 0 rgba(0, 0, 0, 0);font-size: 16px;  border: 0 none; cursor: pointer;  padding: 0;	color: #852323;   float: right;  font-size: 21px;  font-weight: 700;  line-height: 1;  opacity: 0.2;   text-shadow: 0 1px 0 #fff; height:auto; box-shadow:none;}
+
+.errormessage_data {background-color: #f7bebe; color: #852323; border: 1px solid #c55454; border-radius: 4px; margin-bottom: 20px; padding: 15px;	font-family:"proxima_nova",Arial, Helvetica, sans-serif; line-height:normal;}
+	
+.errormessage_data button.close{background: none repeat scroll 0 0 rgba(0, 0, 0, 0);font-size: 16px;  border: 0 none; cursor: pointer;  padding: 0;	color: #852323;   float: right;  font-size: 21px;  font-weight: 700;  line-height: 1;  opacity: 0.2;   text-shadow: 0 1px 0 #fff; height:auto; box-shadow:none;}
+
+
+.HomeLoader{width: 100%; height: 100%; background: url("../images/loader.gif") no-repeat center center #fff; position:absolute; display:none; opacity: 0.7; z-index:1001; cursor:wait;}
+
+
+
+::-webkit-input-placeholder {
+    color:    #000;
+}
+:-moz-placeholder {
+    color:    #000;
+}
+::-moz-placeholder {
+    color:    #000;
+}
+:-ms-input-placeholder {
+    color:    #000;
+}
+#success_coach:disabled
+{
+background-color:#999999;
+}
+#adpostdata{width:auto;height:45px;line-height:45px;background:#ee9408; color:#FFFFFF;} 
+#adpostdata:hover{background-color:#00a7ed;box-shadow:0 1px 0 #00a7ed;}
+.membershipAlerts {background-color: #b4e589; color: #3d621c; border: 1px solid #81ba4e; border-radius: 4px; margin-bottom: 20px; padding: 15px;	font-family:"proxima_nova",Arial, Helvetica, sans-serif; line-height:18px; font-size:14px;}
+.membershipAlerts div.alert{ height: auto;}
+.membershipAlerts div.alert p{ padding:0px;}
+.membershipAlerts .hide{ display:none;}

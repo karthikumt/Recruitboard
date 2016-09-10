@@ -1,0 +1,523 @@
+
+
+.logo img { width: 100%;}
+.banner .bx-wrapper .bx-controls-direction a{opacity:0;z-index:0;}
+.header{height:auto;min-height:90px;}
+
+.student-athlete .student-card .frm::after { clear: left; content: ""; display: block; visibility: hidden;}
+.right-silde > input{margin:0 0 5px;cursor:default;}
+ul.card-listing li h6{width:56%;}
+ul.card-listing li span{width:44%;}
+
+.coach-cart ul.card-listing li span{width:auto;}
+
+.card-popup{width:auto;}
+body.home-bg{background:#031a80 ;}
+.athleteBtn-group .btn-ads { padding: 0 0 0 10px;}
+.athleteBox:last-child { padding-right: 20px;}
+.athleteBox:first-child{ padding-left: 20px;}
+.athleteBox:nth-child(odd){padding-left:0;}
+.athleteBox:nth-child(even){padding-right:0;}
+
+@media screen and (max-width:1200px)
+{
+	.dashboard-left{width:69%;}
+	.dashboard-right.fr.clearfix{width:31%;}
+	.dashboard-left .logo { padding: 0 18px 0 0;}
+	.nav ul li a{padding:0 10px;}
+	
+	.dashboard-right ul.clearfix.fl { display: inline-block;  float: none;  width: auto;}
+	.dashboard-right .search.fr.clearfix { display: inline-block; float: none; }
+	
+	.dashboard-right li.user{margin:11px 5px 12px;}
+	.dashboard-right li a{margin:0 5px;}
+
+	.user a{background-position:right 5px center;padding:10px 25px 10px 30px;font-size:13px;}
+	.dashboard-right li.user{background-position:10px center;}
+	
+	.dashboard-content{margin:-130px 0 0;}
+	.first-section{margin-bottom:40px;}
+	.dashboard-Lbox, .dashboard-Rbox{width:49%;}
+	.dash-multititle .dash-title.fl { width: auto;}
+	.dash-multititle .dash-title h3{padding:5px 15px 15px;font-size:15px;}
+	.my-SCA { margin: 0 0 0 -20px;}
+	.my-SCA .cols-2 { margin: 0 0 20px; padding: 0 0 0 20px;}
+	.btn-sca a{padding:20px 0;}
+	
+	.athlete-view .athleteBox{padding:0 10px 20px;}
+	.athlete-view .athleteMainBoxL { height: 120px; margin: 0 10px 10px 0; width: 120px;}
+	.athlete-view .athleteMainBoxR .athleteMainListBox {overflow: hidden;}
+	.athlete-view .athleteMainBoxR{padding-left:0;overflow:visible;}
+	.athlete-view .athleteBtn-group .btn-ads{padding:0 0 0 8px;}
+	.athleteBox:nth-child(odd){padding-left:0;}
+	.athleteBox:nth-child(even){padding-right:0;}
+
+	.footer .copyright ul{text-align:center;padding:20px 20px 30px;display:block;list-style:none;}
+	.footer .copyright ul li{padding:4px 20px 10px;line-height:22px;background:url(../images/disk-icon.png) no-repeat 0 10px;position:relative;}
+	.footer .copyright ul li:after{content:"";display:block;left:0;right:0;top:0;height:1px;width:100%;border-bottom:1px solid #33b8ee;padding-bottom:10px;}
+	
+	
+}
+
+
+@media screen and (max-width:1023px)
+{
+	.wrapper{padding:0 30px;}
+	.dashboard-left { display: block; float: none; width: auto;position:relative;}
+	.dashboard-right.fr.clearfix{width:auto;display:block;}
+	.dashboard-right .search.fr.clearfix{width:auto;}
+	.nav{float:right;}
+	
+	#pageing{left:30px;top:30px;}
+	.banner-text h1{font-size:45px;}
+	.banner-text .slag{font-size:21px;}	
+	.drop-menu li:first-child{border-top:0;}
+	.drop-menu li {
+	  border-top: 1px solid #eeeeee;
+	  border-left: 1px solid #eeeeee;
+	  padding: 20px;
+	  width: 33.33%;
+	}
+	.register{width:auto;padding:40px;}
+	.student-athlete{padding:30px 20px;}
+	.text-b{width:35%;}
+	.student-athlete .student-card{margin:0 0 0 -15px;}
+	.cols-3{padding:0 0 0 15px;}
+	
+	.image-upload{height:200px;}
+	.student-card .image-upload .uploadimg{background-size:99% 99% !important;background-repeat:no-repeat;padding:0;}	
+	ul.login-frm{width:auto;}
+	
+	.cols-big{padding:0 0 0 15px;}
+	.cols-small{padding:0 0 0 15px;}
+	.added-value{height:auto;min-height:42px;line-height:normal;padding:10px;}
+	.btn-checkbox{background:none;position:relative;margin:10px 0 0;top:inherit;right:inherit;left:inherit;}
+	.btn-checkbox input[type="checkbox"]{width:88px;}
+	
+	.student-athlete.biometric .student-card .image-upload{min-height:250px;}
+	.student-athlete.biometric .student-card .uploadimg{padding:50px 0;}
+	
+	.sub-hight{padding-left:0;}
+	.sub-hight.fl{padding-right:5px;}
+	.frm .sub-hight  select{padding:0 8px;font-size:13px;}
+	
+	.student-athlete .frm{margin:0 0 20px -10px;}
+	.cols-5{padding:0 0 0 10px;}
+	
+	.details.fl{padding:15px 15px 0 15px;}
+	.my-recru{padding:10px 5px 10px 0;}
+	.my-recru ul li, .details span{font-size:15px;}
+	.msg-btn a{padding:12px 15px 12px 40px;}
+	.msg-btn{padding:25px 25px 22px 0;}
+	
+	.dashboard-content{margin:-100px 0 0;}
+	.first-section{margin-bottom:30px;}
+	
+	.dashinner-rbox{padding:20px;}
+	.dashinner-lbox{padding:20px 10px 26px 20px;}
+	
+	.da-update{padding-right:10px;}
+	.da-update .frm textarea{padding-top:15px;}
+	
+	.links ul{margin:0 0 10px;}
+	.links ul li a{padding:13px 15px 13px 35px}
+	.links ul li a.link, .links ul li a.Photo, .links ul li a.Video{background-position: 15px center;}
+	
+	.dashboard-box .mian-scrool > .mCSB_inside > .mCSB_container{margin-right:15px;}
+	.video-thum img { height: 80px;}
+	.left-img{margin-right:10px;}
+	.left-text h6, .left-text h6 a{font-size:14px;}
+	.left-text { padding-right: 15px;}
+	
+	.cal{margin:0 0 10px;float: none; width: auto;}
+	.dash-op.fr { float: none; width: auto;}
+	.dash-op ul li {display: inline-block;float: none;vertical-align: middle;}
+	.dash-op ul li a { padding: 0 4px 0 20px;}
+	.pump, .comment, .share{background-position:0 center;}
+	
+	.dash-title{margin-bottom:20px;padding-right: 15px;margin-top:-20px;}
+	.dash-multititle .dash-title.fl, .galary .tabing li.dash-title{margin-top:-24px;}
+	.dash-multititle .dash-title.fl { padding-right: 15px; width: auto;}
+	.dash-multititle .dash-title h3{padding:5px 15px 15px;font-size:15px;}
+	.dash-title h3{font-size:15px;}
+	.galary h3{margin-right:0;}
+	
+	.my-SCA { margin: 0 0 0 -10px;}
+	.my-SCA .cols-2 { margin: 0 0 10px; padding: 0 0 0 10px;}
+	.btn-sca a{font-size:14px;padding:10px 0;}
+	
+	.galary-grid ul li{width:50%;}
+	.galary-grid ul li:nth-child(3n+1){clear:none;}
+	.galary-grid ul li:nth-child(2n+1){clear:both;}
+	
+	.sport-list{padding:20px 10px;}
+	.sport-list ul{width:50%;}
+	.sport-list ul li{background-position:5px center;}
+	.sport-list ul li a{padding:5px 5px 5px 20px}
+	.sport-box .dash-title{padding-right:0;}
+	.PV-content{width:auto;}
+	
+	.main-head h3{font-size:20px;}
+	.main-head p{font-size:16px;}
+	
+	.card-popup{padding:20px 10px;}
+	.card-details{padding:15px;margin:0 0 10px;}
+	.card-img{margin:0 0 10px;}
+	.center-content{padding:0 10px;}
+	
+	.user .drop-down a{padding:10px;font-size:13px;}
+	
+	.athlete-view .athleteBox {
+	  float: none;
+	  margin: 0 0 10px;
+	  padding: 0;
+	  width: auto;
+	}
+	
+	
+	
+}
+
+@media screen and (min-width:768px){.nav ul{display:block !important}}
+@media screen and (max-width:767px)
+{
+	.wrapper{padding:0 20px;}
+	#pageing {  bottom: 10px; left: 10px; margin: 0 auto; right: 10px; text-align: center;top: inherit;}
+	.pager-btn { display: inline-block; position: relative; vertical-align: middle; }
+	
+	.banner-text{top:50%;margin-top:-100px;}
+	.banner-text h1 { font-size: 25px;}
+	.banner-text .slag {font-size: 16px;}
+	.banner-btn{margin:20px 0 0;}
+	.btn{margin:0 8px 0;}
+	
+	.reg-title{font-size:14px;}
+	
+	.register{padding:20px;}
+	.reg-title h2{font-size:22px;}
+	.fileupload { background:#fff; float: left; height: auto; min-height: 60px; width: 100%;}
+	
+	.captch-frm .inner-frm.fr {
+	  float: none;
+	  padding: 0 0 14px;
+	  width: auto;
+	}
+	
+	.reg-frm.step10 .qualification{margin:10px 0;}
+	.reg-frm.step10 .qul-textbox{width:auto;}
+	.register.step9 .reg-title h3{font-size:16px;}
+	.reg-title h3{font-size:16px;}
+	.sub-hight{padding-left:0;}
+	.sub-hight.fl{padding-right:5px;}
+	.frm .sub-hight  select{padding:0 3px;font-size:13px;}
+	
+	.student-athlete .student-card .reg-frm.pitching-stats{margin:0 0 20px;}
+	.student-athlete .student-card{margin:0;padding:10px 0;}
+	.cols-3{width:auto;float:none;padding:0;}
+	.left-upload, .top-upload{margin:0 0 20px;}
+	
+	.student-athlete .frm{margin:0 0 0 -10px;}
+	.cols-4{width:50%;padding:10px 0 0 10px;}
+	.cols-5 {width:50%; padding: 10px 0 0 10px;}
+	
+	.image-upload{height:250px;}
+	.student-card .image-upload .uploadimg{padding:0;}
+	.student-athlete .reg-title h2::before, .student-athlete .reg-title h2::after{display:none;}
+	.student-athlete .reg-title h2{font-size:25px;}
+	
+	.cols-small{padding:0;width:auto;float:none;}
+	.cols-big { padding: 0; width: auto; float: none;}
+	.btn-checkbox { background: none repeat scroll 0 0 #eeeeee; position: absolute;right: 8px;
+	  text-transform: uppercase; top: 8px; margin:0;}
+	  
+	  .left-side.fl{margin-right:10px;}
+	  .left-side input{width:110px;}
+	  .video-btn{padding:20px 15px;margin-right:0;}
+	
+	  .complet-title{font-size:25px;margin-top:20px;}
+	  
+	  .details h2{font-size:25px;padding:0 0 10px;}
+	  .my-recru ul li{padding:0 8px;}
+	  .my-recru ul li, .details span{font-size:14px;}
+	  .dashboard-content{margin:0;}
+	  .img.fl{width:30%;}
+	  .profile-text{width:auto;}
+	  .my-recru { padding: 5px 5px 5px 0;}
+	  .msg-btn { padding: 10px 25px 20px 0;}
+	  
+	  .dashboard-Lbox, .dashboard-Rbox { width: auto; float: none;}
+	  .dashboard-Lbox.fl { margin: 0 0 20px;}
+	  
+	 .dashboard-right.fr.clearfix{margin:0 auto;text-align:center;float:none;}
+	 
+	 .dashboard-left .logo{display: inline-block;float: none; width: auto;padding:0;margin:0;}
+	 .nav { display: block; float: none; width: auto;}
+	 .nav ul {
+	  background: none repeat scroll 0 0 #374aa1;
+	  border: 3px solid #374aa1;
+	  display: none;
+	  float: none;
+	  width: auto;
+	}
+	 .toggle {
+		  background: none repeat scroll 0 0 #fff;
+		  padding: 5px;
+		  position: absolute;
+		  right: 0;
+		  top: 10px;
+		  border-radius:3px;
+		}
+		.toggle > span {
+		  background: none repeat scroll 0 0 #374aa1;
+		  display: block;
+		  height: 4px;
+		  margin: 3px;
+		  padding: 2px;
+		  width: 25px;
+		}
+	  
+	 .nav ul li { display: block; float: none; margin: 0; padding: 0; width: auto;}
+	 .nav ul li a { line-height: normal; padding: 13px 10px;}
+	 
+	 .top-link li a{padding:20px 15px 37px 25px;}
+	 .tp-reg, .tp-login{background-position:8px 22px;}
+	
+	.left-header.fl { width: 50%;}
+	 .drop-menu{top:90px;}
+	 .drop-menu li:nth-child(3n+1) { clear: left;}
+	 .drop-menu li:first-child { border-top: 1px solid #eeeeee;}
+	 
+	 .sports, .student-athletes, .section{padding:40px 0;}
+	 .sport-box{width:auto;float:none;}
+	 {padding:40px 0;}
+	 .section-title{font-size:30px;margin:0 auto 30px;}
+	 .sport-box, .PV-box.fl{margin:0 0 30px;}
+	
+	 .PV-box{width:auto;float:none;}
+	 
+	 .student-athletes h2{font-size:22px;line-height:28px;}
+	 .athletes-surrvy .athletes .athlets-title { width: 45%;}
+	 .athletes-surrvy .athletes .premium { display: block; width: 27.1%; word-wrap: break-word;}
+	 .athletes-surrvy .athletes .athlets-title, 
+	 .athletes-surrvy .athletes .trail, 
+	 .athletes-surrvy .athletes .premium, .athletes-surrvy .athletes .competitor{font-size:15px;padding: 20px 10px; border-left:0;}
+	 
+	 .abtimg-box.fl{margin:0 20px 10px 0;}
+	 .abtimg-box.fr{margin:0 0 10px 20px;}
+	 .section.rev-section .abttext-box{padding:0;}
+	 .abttext-box { float: none; padding: 0; width: auto;}
+	 .abttext-box p{font-size:14px;}
+	 .abttext-box h3{font-size:20px;}
+	 
+	 .PV-box .dash-title{margin:-6px auto 15px}
+	 
+	 .footer{height:auto;line-height:20px;padding:20px 0;}
+	 .copyright{font-size:12px;}
+	 
+	 .left-content, .right-content{width:auto;float:none;}
+	 .center-content{width:auto;float:none;padding:0;}
+	 
+	 .card-headin.clearfix{margin:10px 0 0;position:relative;}
+	 .head-left, .head-right {display: block;margin: 0; text-align: left;  width: auto;}
+	 .head-left{float:left;}
+	 .main-head::before, .main-head::after{display:none;}
+	 .main-head{float:none;width:auto;display:block;margin:10px 0;box-shadow:none;padding:15px;clear:both;}
+	 .head-right { float: right; padding: 0; position: static; right: 0; top: 0; width: auto;}
+	 
+	 .bpcard-dt .left-content, .bpcard-dt .center-content { float: left; width: 50%;}
+	 #baseball-player-card .left-content::after { clear: both; content: ""; display: block; visibility: hidden;}
+	 .card-img.top-upload, .card-img.right-upload{ float: left; width: 50%;}
+	
+	.left-img{margin:0 20px 0 0;}
+	.dash-op ul li{padding:0 0 10px;}
+	
+	.hp-add .athleteMainList.fl, .hp-add .athleteMainList.fr {
+	  border: 0 none;
+	  float: none;
+	  padding: 0;
+	  width: auto;
+	}
+	.dashboard-coach-ads{padding:20px 0;}
+	.my_Account{padding:10px 0;}
+	.acc-title{margin: 0 0 20px;}	
+	.forums-details{padding:10px 20px;}
+	.forums-details .couch-details .info-details h3{font-size:19px;line-height:23px;padding:0 0 10px;}
+	.couch-details .info-details .coach_newinfo h4{font-size:15px;padding:0 0 10px;}
+	 .coach_newinfo ul li{font-size:15px;}
+	
+	.forums-details .couch-details .info-details h2{font-size:23px;}
+	.acc-title h2.fr{margin:0;text-align:center;font-size:18px;}
+	
+	.athleteTopBoxL .userName{font-size:14px;}
+	
+	.image-upload{margin-bottom:20px;}
+	.right-upload{margin:0;}
+	
+	.cols-6 {padding:0;}
+	
+	
+	
+}
+
+
+
+
+
+@media screen and (max-width:479px)
+{
+	.wrapper{padding:0 10px;}
+	
+	.banner-text {
+	  margin-top: -70px;
+	  top: 50%;
+	}
+	.banner-text h1 { font-size: 20px;line-height:22px;}
+	.banner-btn{margin:10px 0 0;}
+	.banner-text .slag {display:none;}
+	#pageing {  bottom: 5px;}
+	#pageing a:hover .hover-div {display: none;	}
+	
+	.btn a{font-size:12px;height:35px;line-height:35px;}
+	.btn a .btn-icon{height:35px;width:35px;}
+	
+	.register{padding:20px;}
+	.reg-title h2{font-size:20px;}
+	.stud-athlete .reg-title h2 { line-height: 24px;}
+	
+	.frm{padding:5px 0;}
+	.inner-frm{float: none;width: auto;}
+	.inner-frm.fl {padding: 0 0 10px;}
+	.inner-frm.fl::after {
+	  clear: both;
+	  content: "";
+	  display: block;
+	  visibility: hidden;
+	}
+	
+	.reg-frm .file-btn{width:240px;overflow:hidden;}
+	
+	.btn.btn-about, .btn.btn-video, .btn.btn-about:hover, .btn.btn-video:hover{display:block;background:none;}
+	.btn.btn-about a { background: #00a7ed;display:inline-block;border-radius:5px;}
+	.btn.btn-video a{ background: #ed9408;display:inline-block;border-radius:5px;}
+
+	.ft-title{padding:20px 20px 0;font-size:16px;}
+	.ft-list{padding:20px;}
+	.btn-meb a, .btn-meb input{font-size:13px;}
+		
+	.sub-hight{padding-left:10px;}
+	.sub-hight.fl{padding-right:0;}
+	.frm .sub-hight  select{padding:0 10px;font-size:14px;}
+	.student-athlete .reg-title h2{font-size:20px;}
+	
+	.student-athlete { padding: 20px 15px;}
+	.student-athlete .frm{margin:0;}
+	.cols-4{width:auto;float:none;padding-left:0;}
+	.cols-5 {padding: 10px 0 0;width: auto;float:none;}
+	
+	.left-side{width:auto;float:none;position:relative;}
+	.left-side.fl{margin-right:0;}
+	.video-btn { display: block; float: none; margin-right: 0; padding: 20px 15px; position: static; width: auto;}
+	.left-side input { left: 0; position: absolute; right: 0; top: 0; width: 100%;}
+	
+	.complet-title{font-size:20px;}
+	
+	.img.fl { display: block; float: none; width: auto;}
+	.profile-text { display: block; float: none; padding: 0; width: auto;}
+	
+	.galary-grid ul{margin:0;}
+	.galary-grid ul li { float: none; padding: 0; width: auto;}
+	
+	.dashboard-left .logo{width:75%;}
+	
+	.dashboard-right.fr.clearfix{float:none;margin:0 auto;text-align:center;padding:10px 0 20px;}
+	.dashboard-right ul.clearfix.fl{float:none;width:auto;display:block;}
+	.dashboard-right li{display:inline-block;float:none;}
+	.dashboard-right .search.fr.clearfix { display: block; float: none; margin:0;}
+	.nav ul{top:180px;}
+	
+	 
+	 .drop-menu li:nth-child(3n+1) { clear: none;}
+	 .drop-menu li:nth-child(2n+1) { clear: left;}	
+	 .drop-menu li{width:50%;}
+	 
+	 .header { line-height: 70px;}
+	  .drop-menu{top:135px;}
+	 .left-header.fl {
+	  display: inline-block;
+	  float: none;
+	  margin: 0 auto;
+	  width: auto;
+	}
+	.top-link .drop-menu li a { padding: 10px;}
+	.capcha-code{margin:0 0 10px;position:static;text-align:left;}
+	
+	.sports, .student-athletes, .section{padding:30px 0 20px;}
+	.sport-list ul { float: none; width: auto;}
+	.sport-list ul li{display:block;}
+	.section-title { font-size: 22px; margin: 0 auto 20px;}
+	
+	.abtimg-box.fr{margin-left:0;}
+	.abtimg-box { display: block; float: none; margin: 0 0 10px;  width: auto;}
+	.abttext-box h3 { font-size: 17px; padding: 0 0 15px;}
+	
+	.student-athletes h2 { font-size: 16px; line-height: 22px;}
+	table.athletes th{font-size:15px;}
+	
+	.dashboard-banner{background:#dfdfff;min-height:30px;}
+	.dashboard-banner:hover .edit{display:none;}
+	.dashboard-banner img{display:none;}
+	
+	.dash-multititle .dash-title.fl{padding-right:12px;}
+	
+	.capcha{text-align:left;padding:0;}
+	.capcha-code { display: inline-block; margin: 0 0 10px; position: relative; text-align: left;
+	  vertical-align: middle;right:0;}
+	  .capcha-word{position:static;display:inline-block;vertical-align:top;}
+	  
+	   .bpcard-dt .left-content, .bpcard-dt .center-content { float: none; width: auto;}
+	  .card-img.top-upload, .card-img.right-upload{ float: none; width: auto;}
+	  
+	  .dash-multititle.tabing.clearfix { margin: 0 -5px;}
+	  .dash-multititle .dash-title.fl { padding:0 5px;}
+	  .dashinner-rbox { padding: 20px 10px;}
+	  .dash-multititle .dash-title h3{font-size:14px;}
+	  .dashinner-lbox { padding: 20px 0 26px 10px;}
+	  .links ul li a{font-size:13px;}
+	   .dash-op ul li{font-size:13px;}
+	  .dash-op ul li a{padding:0 10px 0 20px;font-size:13px;}
+	  
+	  #biometric-player-card .card-headin {margin:20px 0 0;}
+	  .head-left, .head-right{float:none;width:auto;}  
+	  .head-row h6 { line-height: 23px;}
+	  .head-row span { word-wrap: break-word;}
+	 /* .fixbottom{position:fixed;left:0;right:0;bottom:0;z-index:999;}*/
+	 
+	 
+	  
+	  .athlete-view .athleteTopBox{padding:8px 15px;}
+	  .athlete-view .athleteMainBox{padding:15px 10px;}
+	  .athlete-view .athleteMainBoxL { height: auto; width: auto; float: none; width: auto; margin: 0; padding:10px 15px 0;	}
+	 .athlete-view .athleteBtn-group .btn-ads {  padding: 0 0 5px 5px;	}
+	 
+	 .forums-details{padding:10px;}
+	.forums-details .couch-details .info-details h3{font-size:16px;line-height:23px;padding:0 0 10px;}
+	.couch-details .info-details .coach_newinfo h4{font-size:14px;padding:0 0 10px;}
+	 .coach_newinfo ul li{font-size:13px;}
+	 .forums-details .couch-details .info-details h2{font-size:20px;}
+	 .acc-title h2.fr{font-size:15px;}
+	.acc-title h2{font-size:23px;}
+	.athleteTopBoxL .userName{font-size:13px;}	 
+	
+	.cols-6 {
+		  float: none;
+		  padding: 0;
+		  width: auto;
+		  float: none;
+		} 
+}
+
+
+
+
+
+
