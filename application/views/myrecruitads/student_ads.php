@@ -41,6 +41,7 @@
                                 </a>
                               </li>
                               <li class="schoolName"><?php echo $PostAds[$i]['Po_SchoolName']; ?></li>
+                              <div><?php echo ($PostAds[$i]['add_responded']==1)?'he':'';?></div>
                             </ul>
                                    <!-- <div class="Exp-date fr">Expires on <?php echo date('d M',strtotime($PostAds[$i]['Po_ExpireDate'])); ?></div>-->
                           </div>
@@ -122,13 +123,19 @@
                                 </div>
                               </div>
                               <div class="athleteBtn-group clearfix">
-                                            <!--<div class="btn-profile fl">
-                                                <a href="#">Profile</a>
-                                            </div>-->
+                                <div class="post-btn fl">
+                                      <a href="<?php echo $PostAds[$i]['Coach_TeamID']; ?>" target="_blank" >View Team Page</a>
+                                </div>
+                                <div class="post-btn fr">
+                                     <a href="<?php echo $UserInfo['Coach_CoachAward']; ?>" target="_blank" >Complete Questionnaire</a>
+                                </div>
+                                </div>
+                                <div class="athleteBtn-group clearfix">
                                 <div class="btn-ads fl">
-                                                <a href="javascript:void(0);" onclick="getCoachInfo(<?php echo $PostAds[$i]['UserID']; ?>,'<?php echo $PostAds[$i]['Po_Position']; ?>')">Respond to Ad</a>
+
+                                                <a href="javascript:void(0);" onclick="getCoachInfo(<?php echo $PostAds[$i]['UserID']; ?>,'<?php echo $PostAds[$i]['Po_Position']; ?>', <?php echo $PostAds[$i]['PostID']; ?>)">Respond to Ad</a>
                                             <script>
-                                            function getCoachInfo(UserID,pos){ 
+                                            function getCoachInfo(UserID,pos, PostId){ 
                                                                         $.magnificPopup.open({
                                                                           items: {
                                                                             src: '<?php echo base_url(); ?>myrecruitads/Coach_Details/'
@@ -138,7 +145,8 @@
                                                                               type: 'POST',
                                                                               data: { 
                                                                                 UserID:UserID,
-                                                                                pos:pos
+                                                                                pos:pos,
+                                                                                PostId:PostId
                                                                               }
                                                                               }
                                                                             },

@@ -10,6 +10,7 @@ class Myrecruitads extends CI_Controller {
 		$this->load->model('profile_model');
 		$this->load->model('student_athlete_model');
 		$this->load->model('juco_transfer_model');
+		$this->load->model('user_ad_response_model');
 		
 		$this->load->library('session');			
 	}
@@ -28,13 +29,10 @@ class Myrecruitads extends CI_Controller {
 		 }else if($User['UserType']=='1' || $User['UserType']=='2')
 		 {
 			$data['UserData']=$User;
-			/*$data['PostAds']=$this->myrecruit_model->AllAds();*/
 			$data['PostAds']=$this->myrecruit_model->AdsByPage(0,6);
 			$data['MainContent'] = $this->load->view('myrecruitads/student_ads',$data, true);
-//pr($data['MainContent']);
 	    	$this->load->view('template', $data);	
-		 }else{ }
-		 if($User['UserType']=='3')
+		 }else if($User['UserType']=='3')
 		 {
 			$data['UserData']=$User;
 			$data['UserInfo']=get_user_data('colleage_coach',array('Coach_University','Coach_ProfileImage'),$UserID);
@@ -42,8 +40,7 @@ class Myrecruitads extends CI_Controller {
 			$data['ExpireAds']=$this->myrecruit_model->ExpireAds();
 			$data['MainContent'] = $this->load->view('myrecruitads/colleage_coach',$data, true);
 	    	$this->load->view('template', $data);	
-		 }
-		if($User['UserType']=='4')
+		 }else if($User['UserType']=='4')
 		 {
 		 	redirect(base_url().'dashboard');	 
 		 }
@@ -120,14 +117,16 @@ class Myrecruitads extends CI_Controller {
 	public function Coach_Details()
 	{
 		$UserID=$this->input->post('UserID');
+		$PostID = $this->input->post('PostId');
 		$User=get_profile_detail($UserID);
 		//$data['UserEmail']=$User['UserEmail'];
 		$data['Userdetails'] = $User;
-		$data[''] = $User=get_profile_detail($UserID);
-		$SUserID=$this->session->userdata('MyRecuritID'); 
+		$data[''] = $User;
+		$SUserID=$this->session->userdata('MyRecuritID');
 		$data['stu_details'] = $User=get_profile_detail($SUserID);
 		$data['Profile']=$this->profile_model->student_profile($SUserID);
 		$data['Profile1']=$this->profile_model->juco_transfer($SUserID);
+		$this->user_ad_response_model->addUserAdResponse($SUserID, $PostID);
 		echo $data['MainContent'] = $this->load->view('myrecruitads/coach_details',$data, true);
 	}
 	
@@ -140,6 +139,7 @@ class Myrecruitads extends CI_Controller {
 		}else{
 			$this->myrecruit_model->concat_Interest($PostID);
 		}
+		$this->user_ad_response_model->addUserAdResponse($this->session->userdata('MyRecuritID'), $PostID, 0);
 	}
 	
 	

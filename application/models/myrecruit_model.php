@@ -77,7 +77,7 @@ class Myrecruit_model extends CI_Model {
 		}
 
 
-		$sql="SELECT * FROM `coach_post_ads` WHERE `Po_Sport` ='".$SportName."' AND (NOT FIND_IN_SET(`Po_NotInterest`, '". $UserID ."') OR `Po_NotInterest` IS NULL)";		 
+		$sql="SELECT cpa.*, cc.Coach_TeamID, cc.Coach_CoachAward, uar.is_interested AS add_responded FROM `coach_post_ads` cpa left join user_add_response uar ON (uar.post_id=cpa.PostID AND uar.user_id='". $UserID ."') LEFT JOIN colleage_coach cc ON (cc.UserID=cpa.UserID) WHERE `Po_Sport` ='".$SportName."' AND (NOT FIND_IN_SET(`Po_NotInterest`, '". $UserID ."') OR `Po_NotInterest` IS NULL)";
  
 		if($getdata['SportName']=='Golf' || $getdata['SportName']=='Tennis' || $getdata['SportName']=='Swimming & Diving'){		}
 		else{
