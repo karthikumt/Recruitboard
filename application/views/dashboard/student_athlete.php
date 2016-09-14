@@ -588,7 +588,7 @@ var sucess = true;
 function check_stu_validation()
   {
     
-      var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([edu])+$/;
+      var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+(edu|com|in)+$/;
      
      
      

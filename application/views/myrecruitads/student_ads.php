@@ -41,7 +41,7 @@
                                 </a>
                               </li>
                               <li class="schoolName"><?php echo $PostAds[$i]['Po_SchoolName']; ?></li>
-                              <div><?php echo ($PostAds[$i]['add_responded']==1)?'he':'';?></div>
+                              <?php echo ($PostAds[$i]['add_responded']==1)?'<img src='. base_url().'images/green_tick_icon.png alt="" class="fl" style="max-width:5%;">':'';?>
                             </ul>
                                    <!-- <div class="Exp-date fr">Expires on <?php echo date('d M',strtotime($PostAds[$i]['Po_ExpireDate'])); ?></div>-->
                           </div>
