@@ -1676,7 +1676,7 @@ border-right:1px solid #eeeeee;padding:30px;margin:0;border-left:0;border-top:0;
 .athleteBox{width:50%;float:left;display:block;padding:0 20px 40px;}
 .athleteBox:first-child{padding-left:0;}
 .athleteBox:last-child{padding-right:0;}
-.athleteTopBox{border-bottom:1px solid #eeeeee;padding:8px 30px;border-radius: 5px 5px 0 0;
+.athleteTopBox{border-bottom:1px solid #eeeeee;padding:8px 20px 8px 30px;border-radius: 5px 5px 0 0;
 	background: #eeeeee; /* Old browsers */
 	background: -moz-linear-gradient(top,  #ffffff 0%, #f9f9f9 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#f9f9f9), color-stop(100%,#f9f9f9)); /* Chrome,Safari4+ */
@@ -1709,12 +1709,15 @@ border-right:1px solid #eeeeee;padding:30px;margin:0;border-left:0;border-top:0;
   vertical-align: middle;
 }
 
-.athleteBtn-group{padding:10px 0 0;}
-.athleteBtn-group .btn-ads{padding:0 10px;}
-.athleteBtn-group a{font-size:13px;color:#ffffff;display:block;line-height:normal;font-family: 'Open Sans', sans-serif;font-weight:600;background:#ee9408;padding:6px 15px;border-radius:4px;}
+.athleteBtn-group{padding:10px 0 0;width: 50%;}
+.athleteBtn-group .btn-ads{padding:0 10px;margin-bottom:10px;}
+.athleteBtn-group a{font-size:11px;color:#ffffff;display:block;line-height:normal;font-family: 'Open Sans', sans-serif;font-weight:600;background:#ee9408;padding:6px 15px;border-radius:4px;}
 .athleteBtn-group a:hover{background:#00a7ed;}
 .athleteBtn-group .btn-ads a{background:#777777;}
 .athleteBtn-group .btn-ads.fl > a:hover{background:#00a7ed;}
+.post-btn {
+    margin-bottom: 10px;
+}
 
 
 

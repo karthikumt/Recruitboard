@@ -374,6 +374,24 @@ $Country=$this->input->post('Country');
 		        
 	}
 
+	public function update_payment($email_id, $payment_type){
+		$data = array(
+				  'Step'=>11,
+				  'IsComplated'=>1,
+				  'PaymentType'=>$payment_type,
+				  'PaymentDate'=>date('Y-m-d H:i:s'),
+				  //'ReferenceID'=>$Payment['RPREF'],
+				  //'ResponceMessage'=>$Payment['RESPMSG'],
+				  //'TranjectionRef'=>$Payment['TRXPNREF'],
+				  //'PaypalRef'=>$Payment['PPREF'],
+				  //'CorelationID'=>$PaidAmt['CORRELATIONID'],
+				  'IsCancel'=>NULL
+				);
+				
+			$this->db->where(array('UserEmail'=>$email_id));
+			$this->db->update('user_register',$data);
+	}
+
 	
 	public function cancel_payment()
 	{

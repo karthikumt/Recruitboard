@@ -26,13 +26,11 @@ class Dashboard extends CI_Controller {
 		 {
 		 	$this->session->set_userdata('MyRecuritID',$this->session->userdata('UserID'));
 		 
-		 	$this->session->unset_userdata('UserID');
-		
-		
+		 	$this->session->unset_userdata('UserID');		
 		 }
 	     $UserID=$this->session->userdata('MyRecuritID'); 
 		 $User=get_user_detail($UserID);
-		   
+
 	   	 $this->session->set_userdata('Dashbord',$User['IsComplated']);
 		 if($User['UserType']=='1' && $User['Step']=='11')
 		 { 
@@ -99,6 +97,7 @@ class Dashboard extends CI_Controller {
         $data['coach_info']= $this->general_model->get_sport_data('coach','UserID',$UserID);
 	    $data['category']=$this->general_model->get_table_data('category');
 	    $data['MainContent'] = $this->load->view('dashboard/student_athlete',$data, true);
+	   // pr($data);
 	    $this->load->view('template', $data);	
 		}
 		else

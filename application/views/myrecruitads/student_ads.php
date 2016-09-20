@@ -41,9 +41,9 @@
                                 </a>
                               </li>
                               <li class="schoolName"><?php echo $PostAds[$i]['Po_SchoolName']; ?></li>
-                              <?php echo ($PostAds[$i]['add_responded']==1)?'<img src='. base_url().'images/green_tick_icon.png alt="" class="fl" style="max-width:5%;">':'';?>
                             </ul>
                                    <!-- <div class="Exp-date fr">Expires on <?php echo date('d M',strtotime($PostAds[$i]['Po_ExpireDate'])); ?></div>-->
+                                   <?php echo ($PostAds[$i]['add_responded']==1)?'<img src='. base_url().'images/green_tick_icon.png alt="" class="fr" style="max-width:7%;">':'';?>
                           </div>
                           <div class="athleteMainBox clearfix">
                             <div class="athleteMainBoxL">
@@ -122,15 +122,18 @@
                                             </div>   
                                 </div>
                               </div>
-                              <div class="athleteBtn-group clearfix">
+
+                              <div class="athleteBtn-group clearfix fl">
                                 <div class="post-btn fl">
                                       <a href="<?php echo $PostAds[$i]['Coach_TeamID']; ?>" target="_blank" >View Team Page</a>
                                 </div>
-                                <div class="post-btn fr">
+
+                                <div class="post-btn clearfix fl">
                                      <a href="<?php echo $UserInfo['Coach_CoachAward']; ?>" target="_blank" >Complete Questionnaire</a>
                                 </div>
-                                </div>
-                                <div class="athleteBtn-group clearfix">
+                                
+                              </div>
+                              <div class="athleteBtn-group fl">
                                 <div class="btn-ads fl">
 
                                                 <a href="javascript:void(0);" onclick="getCoachInfo(<?php echo $PostAds[$i]['UserID']; ?>,'<?php echo $PostAds[$i]['Po_Position']; ?>', <?php echo $PostAds[$i]['PostID']; ?>)">Respond to Ad</a>
