@@ -129,7 +129,7 @@
                                 </div>
 
                                 <div class="post-btn clearfix fl">
-                                     <a href="<?php echo $UserInfo['Coach_CoachAward']; ?>" target="_blank" >Complete Questionnaire</a>
+                                     <a href="<?php echo $PostAds[$i]['Coach_CoachAward']; ?>" target="_blank" >Complete Questionnaire</a>
                                 </div>
                                 
                               </div>
