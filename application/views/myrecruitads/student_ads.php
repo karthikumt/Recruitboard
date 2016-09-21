@@ -171,7 +171,7 @@
                              <?php if($i%2!=0){?> </div><?php  }?> 
                              <?php } } ?> 
                       </div>
-                      <div class="athleteBtn-group clearfix" style="">
+                      <div class="athleteBtn-group clearfix" style="margin:auto; width:50%;">
                         <div class="btn-ads" style=" background-position:center; background-repeat:no-repeat; height:32px; width: 200px;margin: auto; text-align:center"><a href="javascript:void(0);" id="load-more" data-page="0">Load more</a>
                         </div>
                       </div>                        
