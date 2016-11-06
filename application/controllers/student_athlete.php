@@ -16,7 +16,6 @@ class Student_athlete extends CI_Controller {
  	public function index()
 	{
 			
-			
 		 $cap =get_captcha();
 		 $data = array(
 						'captcha_time' => $cap['time'],
@@ -57,7 +56,6 @@ class Student_athlete extends CI_Controller {
 		if($user_info['UserEmail']!='' && $user_info['Password']!='' && $step1_info['Stu_ParentEmail']!='' )
 		{
 		
-			
  			$Email=$this->general_model->check_email();
 			if($Email=='0')
 			{

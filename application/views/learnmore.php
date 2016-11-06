@@ -83,7 +83,7 @@
    </div>
    <div class="wrapper">
 		<div class="info-details">
-             If you have any questions or issues, please contact us at <a href="mailto:info@myrecruitBoard.com">info@MyRecruitBoard.com</a>
+             If you have any questions or issues, please contact us at <a href="mailto:myrecruitBoardinfo@gmail.com">myRecruitBoardinfo@gmail.com</a>
   		</div>
   </div>
    

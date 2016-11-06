@@ -36,6 +36,12 @@ define('FOPEN_READ_WRITE_CREATE',				'a+b');
 define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
+define('SMTP_HOST', 'smtp.sendgrid.net');
+define('SMTP_PORT', 587);
+define('SMTP_USER', 'azure_647880b4c7148ba90798dcfac5e2e9cd@azure.com');
+define('SMTP_PASSWORD', 'Y1GRlP1jgE85Ljg');
+define('FROM_EMAIL', 'no-reply@recruitboard.com');
+
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

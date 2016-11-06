@@ -269,16 +269,16 @@ class Student_athlete_model extends CI_Model {
 				'wordwrap' => TRUE,
 				'mailtype' => 'html',
 				'protocol' => 'smtp',
-				'smtp_host' => 'smtp.sendgrid.net',
-				'smtp_user' => 'azure_647880b4c7148ba90798dcfac5e2e9cd@azure.com',
-				'smtp_pass' => 'Y1GRlP1jgE85Ljg',
-				'smtp_port' => 587,
+			  	'smtp_host' => SMTP_HOST,
+			  	'smtp_user' => SMTP_USER,
+			  	'smtp_pass' => SMTP_PASSWORD,
+			  	'smtp_port' => SMTP_PORT,
 				'crlf' => "\r\n",
 				'newline' => "\r\n",
 			);
 
 			$this->email->initialize($config);
-			$this->email->from('no-reply@recruitboard.com', 'MyRecruitBoard');
+			$this->email->from(FROM_EMAIL, 'MyRecruitBoard');
 			$this->email->to($UserEmail['UserEmail']);
 			$this->email->subject('Thank you for your Payment.');
 			$this->email->message($mesg);
