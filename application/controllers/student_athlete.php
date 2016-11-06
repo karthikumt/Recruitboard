@@ -69,7 +69,7 @@ class Student_athlete extends CI_Controller {
 		  	$coll_id = $this->general_model->insert_data('student_athlete',$step1_info);
 			
 			$this->student_athlete_model->profile_image($coll_id);
-			$this->general_model->ParentEmail('student_athlete',$last_id,'Stu_ParentEmail');
+			//$this->general_model->ParentEmail('student_athlete',$last_id,'Stu_ParentEmail');
 				
 			$this->session->set_userdata('UserID',$last_id);
 			$this->session->set_flashdata('successmessage','Thank You For Register.');
