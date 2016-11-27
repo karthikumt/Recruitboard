@@ -213,7 +213,7 @@ function getInsertData()
 {
 
 	var flag = true;
-	var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([edu])+$/;
+	var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+(edu|com|in)+$/;
 	 var email = $('#UserEmail').val();
 	 var confemail = $('#VerifyEmail').val();
      var cap_word=cap_word1.toLowerCase();
