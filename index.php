@@ -1,5 +1,9 @@
 <?php
 
+#ini_set('wincache.fcenabled', '0');
+#error_reporting(E_ALL);
+#ini_set("display_errors", 1);
+
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
