@@ -92,7 +92,7 @@ class Myrecruit_model extends CI_Model {
 
 		$sql.=" ORDER BY PostID DESC";
 		$sql.=" LIMIT ". ($page*$rpp). ", ".$rpp;
-		
+		$sql = "SELECT * FROM (".$sql.") t ORDER BY add_responded";
 		$query = $this->db->query($sql)->result_array();
 		return $query;		
 	
