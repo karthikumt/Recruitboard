@@ -31,6 +31,15 @@ class Post_ad extends CI_Controller {
 		$data['user_info'] = $this->admin_model->get_single_data_by_column('coach_post_ads', 'PostID', $PostID);
         echo $this->load->view('admin/view_post_details', $data, true);
 	}
+
+
+	
+	public function repost_post($PostID)
+	{
+		$sql = 'UPDATE coach_post_ads SET Po_ExpireDate  = DATE_ADD(NOW(), INTERVAL 6 MONTH) where PostID='.$PostID.';';
+		$query = $this->db->query($sql);
+		redirect(base_url().'admin/post_ad');
+	}
 	
 }
 

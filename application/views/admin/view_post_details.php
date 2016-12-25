@@ -37,6 +37,12 @@
                        echo $Gender_details['Coll_Max_HeightName']; ?>
                   </div>
                   <div class="text"><b>Addtional Info :</b><?php echo $user_info['Po_Message']; ?></div>
+                  <?php  
+                  if(strtotime($user_info['Po_ExpireDate']) < time()) { ?>
+                     <a href="<?php echo base_url();?>admin/post_ad/repost_post/<?php echo $user_info['PostID']; ?>" onclick="if(!confirm('Are you sure you want to RePost this Ad?')){return false;}">RePost</a>
+
+                     <?php }
+                  ?>
                 </div>
               </div>
             </div>
