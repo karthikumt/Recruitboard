@@ -23,7 +23,8 @@ class Login extends CI_Controller {
 		$AdminData = $this->login_model->login_check($data); 
 		if($AdminData){
 			$SessionData = array('AdminID'=>$AdminData['AdminID'],'Email'=>$AdminData['Email']);			
-			$this->session->set_userdata('admin_login_session',$SessionData);					
+			$this->session->set_userdata('admin_login_session',$SessionData);
+			$this->session->set_userdata('admin_register',$this->input->post('admin_username'));					
 			redirect(base_url().'admin/dashboard');
 			exit;
 		}else{

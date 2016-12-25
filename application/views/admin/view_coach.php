@@ -43,7 +43,7 @@ function change_status(NewsID,Status){
 	<div class="panel panel-default">
         
         <div class="panel-body">          
-          
+          <a href="<?php echo base_url();?>colleage_coach">Add Coach</a>
           
           <br />          
           
