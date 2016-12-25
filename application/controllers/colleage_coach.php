@@ -30,6 +30,7 @@ class Colleage_coach extends CI_Controller {
 	public function check_admin()
 	{	error_reporting(0);
 		if($this->input->post('admin_username')=="Myrecruit" && md5($this->input->post('admin_password'))=='f86eab79d8a3e44862d3cc52c975ff39')
+		//if($this->input->post('admin_username')=="Myrecruit" && $this->input->post('admin_password')=='df')
 		{
 		$this->session->set_userdata('admin_register',$this->input->post('admin_username'));
 		redirect(base_url().'colleage_coach');	
@@ -55,9 +56,9 @@ class Colleage_coach extends CI_Controller {
 		$Password=password_hash($_POST['Password'], PASSWORD_DEFAULT);
 		$random = substr(md5(time() * rand()),0,15);
 		 
-		$regex = "/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([edu])+$/"; 
+		$regex = "/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+(edu|org|com|in)+$/"; 
 		if (!preg_match( $regex, $UserEmail )) 
-		{ $this->session->set_flashdata('errormessage','Enter the Valid Email Address'); } 
+		{ $this->session->set_flashdata('errormessage','Enter a valid Email Address'); } 
 		
 			  
 		if($Coach_FirstName!="" && $Coach_LastName!="" && $Coach_GenderID!="" && $Coach_SportID!="" && $UserEmail!="" && $Password!="" && $Coach_State!="0" && $Coach_City!=""){
@@ -103,7 +104,7 @@ class Colleage_coach extends CI_Controller {
 
 				if($this->session->userdata('admin_register'))
 				{
-				$this->general_model->sendEmail2($LastID,$_POST['Password']);
+					$this->general_model->sendEmail2($LastID,$_POST['Password']);
 				}
 				else
 				{
@@ -143,7 +144,7 @@ class Colleage_coach extends CI_Controller {
         	}
        			
 			}
-			$this->session->set_flashdata('errormessage','This Email is Allredy Registered. Please Login');
+			$this->session->set_flashdata('errormessage','This Email is Alredy Registered. Please Login');
 		}
 		else {
 			$this->session->set_flashdata('errormessage','Some Fields are Missing.');
