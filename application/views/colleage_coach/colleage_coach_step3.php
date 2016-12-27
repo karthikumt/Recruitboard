@@ -19,7 +19,7 @@
                         <?php echo $this->session->flashdata('successmessage');?>
                     </div>  
                 <?php }?>
-                 <form id="basicForm" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered" action="<?php echo base_url(); ?>colleage_coach/insert_step3" onsubmit="return getInsertData();"
+                 <form id="basicForm" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered" action="<?php echo base_url(); ?>colleage_coach/insert_step3<?php if(isset($_GET['user_id'])) echo '?user_id='.$_GET['user_id'];?>" onsubmit="return getInsertData();"
                 <div class="reg-frm">
                 	<div class="frm clearfix">
                     	<div class="frm">
@@ -40,7 +40,7 @@
                                 <div class="right-silde">
                                 	<span>Add URL</span>
                                  <!--   <div class="videourl"></div>-->
-                                 <input type="text" class="videourl" name="Coach_VideoURL" id="Coach_VideoURL" />			
+                                 <input type="text" class="videourl" name="Coach_VideoURL" id="Coach_VideoURL" <?php if($universityData!=null) {?>value="<?php echo $universityData['Coach_VideoURL']; }?>"/>			
                                  <span style="font-size:10px; float:left;"><b>Note: Upload from YouTube, Vimeo, or Hudl</b></span>
                                 </div>
                               

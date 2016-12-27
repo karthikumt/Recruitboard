@@ -23,6 +23,10 @@ class Colleage_coach extends CI_Controller {
 			 );
 		$data['cap_img']=$cap['image'];	
 		$data['cap_word']=$cap['word'];	
+		if(isset($_GET['user_id'])){
+			$data['universityData'] = get_row_data('colleage_coach','UserID',$_GET['user_id']);
+			$data['userData'] = get_row_data('user_register','UserID',$_GET['user_id']);
+		}
         $data['MainContent'] = $this->load->view('colleage_coach/colleage_coach_step1',$data, true);
         $this->load->view('template', $data);		
 	}
@@ -136,7 +140,10 @@ class Colleage_coach extends CI_Controller {
 			 $this->session->set_userdata('UserID',$LastID);
         	if($this->session->userdata('admin_register'))
 			 {
-				redirect(base_url().'colleage_coach/step2');
+			 	if(isset($_GET['user_id']))
+			 		redirect(base_url().'colleage_coach/step2?user_id='.$_GET['user_id']);
+			 	else
+					redirect(base_url().'colleage_coach/step2');
 			 }
 			 else
 			 {
@@ -176,11 +183,16 @@ class Colleage_coach extends CI_Controller {
 	   $User=get_user_detail($UserID);  
 	   if($User['Step']=='2' && $User['UserType']=='3')
 	   {  
-		   $data['MainContent'] = $this->load->view('colleage_coach/colleage_coach_step2',"", true);
+	   	   if(isset($_GET['user_id']))
+	   	   		$data['universityData'] = get_row_data('colleage_coach','UserID',$_GET['user_id']);
+		   $data['MainContent'] = $this->load->view('colleage_coach/colleage_coach_step2',$data, true);
 		   $this->load->view('template', $data); 
 		}
 	  	else{
-		 redirect(base_url('colleage_coach/step'.$User['Step'].''));
+		 if(isset($_GET['user_id']))
+			redirect(base_url().'colleage_coach/step'.$User['Step'].'?user_id='.$_GET['user_id']);
+		else
+			redirect(base_url().'colleage_coach/step'.$User['Step']);
 	   }
 				
 	}
@@ -222,7 +234,10 @@ class Colleage_coach extends CI_Controller {
 				$Coach_ID=$this->general_model->update_data('colleage_coach',$array,$update_file);	
 				$this->general_model->update_data('user_register',array('Step'=>'3'),array('UserID'=>$UserID));	
 				$this->session->set_flashdata('successmessage','Thank You For Completing.');
-				redirect(base_url().'colleage_coach/step3');
+				if(isset($_GET['user_id']))
+					redirect(base_url().'colleage_coach/step3?user_id='.$_GET['user_id']);
+				else
+					redirect(base_url().'colleage_coach/step3');
 
 		}
 		else
@@ -248,12 +263,18 @@ class Colleage_coach extends CI_Controller {
 				$Coach_ID=$this->general_model->update_data('colleage_coach',$array,$update_file);	
 				$this->general_model->update_data('user_register',array('Step'=>'3'),array('UserID'=>$UserID));	
 				$this->session->set_flashdata('successmessage','Thank You For Completing.');
-				redirect(base_url().'colleage_coach/step3');
+				if(isset($_GET['user_id']))
+					redirect(base_url().'colleage_coach/step3?user_id='.$_GET['user_id']);
+				else
+					redirect(base_url().'colleage_coach/step3');
 				
 		}
 		else{
 			$this->session->set_flashdata('errormessage','Some Fields are Missing.');
-			redirect(base_url().'colleage_coach/step2');	
+			if(isset($_GET['user_id']))
+					redirect(base_url().'colleage_coach/step2?user_id='.$_GET['user_id']);
+				else
+					redirect(base_url().'colleage_coach/step2');
 		}
 		}
 	}
@@ -271,11 +292,16 @@ class Colleage_coach extends CI_Controller {
 	   $User=get_user_detail($UserID);  
 	   if($User['Step']=='3' && $User['UserType']=='3')
 	   {  
-		   $data['MainContent'] = $this->load->view('colleage_coach/colleage_coach_step3',"", true);
+	   		if(isset($_GET['user_id']))
+	   	   		$data['universityData'] = get_row_data('colleage_coach','UserID',$_GET['user_id']);
+		   $data['MainContent'] = $this->load->view('colleage_coach/colleage_coach_step3',$data, true);
 		   $this->load->view('template', $data); 
 		}
 	  	else{
-		 redirect(base_url('colleage_coach/step'.$User['Step'].''));
+		 if(isset($_GET['user_id']))
+			redirect(base_url().'colleage_coach/step'.$User['Step'].'?user_id='.$_GET['user_id']);
+		else
+			redirect(base_url().'colleage_coach/step'.$User['Step']);
 	   }
 	}
 	
@@ -301,12 +327,18 @@ class Colleage_coach extends CI_Controller {
 						);			
 				$Coach_ID=$this->general_model->update_data('colleage_coach',$array,$update_file);
 				$this->general_model->update_data('user_register',array('Step'=>'4'),array('UserID'=>$UserID));	
-				$this->session->set_flashdata('successmessage','Thank You For Completing.');	
-				redirect(base_url().'colleage_coach/step4');
+				$this->session->set_flashdata('successmessage','Thank You For Completing.');
+				if(isset($_GET['user_id']))
+					redirect(base_url().'colleage_coach/step4?user_id='.$_GET['user_id']);
+				else
+					redirect(base_url().'colleage_coach/step4');
 				
 		}else{
 			$this->session->set_flashdata('errormessage','Some Fields are Missing.');
-			redirect(base_url().'colleage_coach/step3');	
+			if(isset($_GET['user_id']))
+				redirect(base_url().'colleage_coach/step3?user_id='.$_GET['user_id']);
+			else
+				redirect(base_url().'colleage_coach/step3');
 		}
 	}
 	
@@ -322,11 +354,16 @@ class Colleage_coach extends CI_Controller {
 		   $User=get_user_detail($UserID);  
 		   if($User['Step']=='4' && $User['UserType']=='3')
 		   {  
-			   $data['MainContent'] = $this->load->view('colleage_coach/colleage_coach_step4',"", true);
+		   	    if(isset($_GET['user_id']))
+	   	   			$data['universityData'] = get_row_data('colleage_coach','UserID',$_GET['user_id']);
+			   $data['MainContent'] = $this->load->view('colleage_coach/colleage_coach_step4',$data, true);
 			   $this->load->view('template', $data); 
 			}
 			else{
-			 redirect(base_url('colleage_coach/step'.$User['Step'].''));
+			 if(isset($_GET['user_id']))
+				redirect(base_url().'colleage_coach/step'.$User['Step'].'?user_id='.$_GET['user_id']);
+			else
+				redirect(base_url().'colleage_coach/step'.$User['Step']);
 		   }
 	}
 	
@@ -405,12 +442,18 @@ class Colleage_coach extends CI_Controller {
 			    $last_id=$this->general_model->insert_data('coach_post_ads',$UserInfo);
 			 	
 				$this->session->set_flashdata('successmessage','Thank You For Completing.');
-				redirect(base_url().'colleage_coach/step5');
+				if(isset($_GET['user_id']))
+					redirect(base_url().'colleage_coach/step5?user_id='.$_GET['user_id']);
+				else
+					redirect(base_url().'colleage_coach/step5');
 				
 		}
 		else{
 			$this->session->set_flashdata('errormessage','Some Fields are Missing.');
-			redirect(base_url().'colleage_coach/step4');	
+			if(isset($_GET['user_id']))
+				redirect(base_url().'colleage_coach/step4?user_id='.$_GET['user_id']);
+			else
+				redirect(base_url().'colleage_coach/step4');	
 		}
 	}
 	
@@ -431,7 +474,10 @@ class Colleage_coach extends CI_Controller {
 		   $this->load->view('template', $data); 
 		}
 	  	else{
-		 redirect(base_url('colleage_coach/step'.$User['Step'].''));
+		 if(isset($_GET['user_id']))
+			redirect(base_url().'colleage_coach/step'.$User['Step'].'?user_id='.$_GET['user_id']);
+		else
+			redirect(base_url().'colleage_coach/step'.$User['Step']);
 	   }
 				
 	}

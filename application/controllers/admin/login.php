@@ -24,7 +24,7 @@ class Login extends CI_Controller {
 		if($AdminData){
 			$SessionData = array('AdminID'=>$AdminData['AdminID'],'Email'=>$AdminData['Email']);			
 			$this->session->set_userdata('admin_login_session',$SessionData);
-			$this->session->set_userdata('admin_register',$this->input->post('admin_username'));					
+			$this->session->set_userdata('admin_register',$data['UserName']);					
 			redirect(base_url().'admin/dashboard');
 			exit;
 		}else{
@@ -37,6 +37,7 @@ class Login extends CI_Controller {
 	
 	public function logout(){
 		$this->session->unset_userdata('admin_login_session');
+		$this->session->unset_userdata('admin_register');
 		redirect(base_url().'admin/login');	
 	}
 }

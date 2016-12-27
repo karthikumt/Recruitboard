@@ -104,7 +104,7 @@ function change_status(NewsID,Status){
                                 <span id="ActSpan_<?php echo $user_list[$i]['UserID']; ?>"><a href="javascript:void(0);" onclick="change_status(<?php echo $user_list[$i]['UserID']; ?>,0);">In-active</a></span>
                             <?php }else{ ?>
                                 <span id="ActSpan_<?php echo $user_list[$i]['UserID']; ?>"><a href="javascript:void(0);" onclick="change_status(<?php echo $user_list[$i]['UserID']; ?>,1);">active</a></span>
-                            <?php } ?>
+                            <?php } ?> | <a href="<?php echo base_url();?>colleage_coach?user_id=<?php echo $user_list[$i]['UserID']; ?>">Duplicate</a>
                           
                             	
                         </td>

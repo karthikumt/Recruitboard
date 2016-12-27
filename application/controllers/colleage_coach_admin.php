@@ -23,6 +23,7 @@ class Colleage_coach_admin extends CI_Controller {
 			 );
 		$data['cap_img']=$cap['image'];	
 		$data['cap_word']=$cap['word'];	*/
+
 		if($this->session->userdata('admin_register'))
 		{
 			$data['MainContent'] = $this->load->view('colleage_coach/colleage_coach_admin_logout',$data, true);

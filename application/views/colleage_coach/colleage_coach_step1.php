@@ -18,22 +18,22 @@
                         <?php echo $this->session->flashdata('errormessage');?>
                     </div>  
                 <?php }?>
-                <form id="basicForm" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered" action="<?php echo base_url() ?>colleage_coach/insert_step1" onsubmit="return getInsertData();">
+                <form id="basicForm" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered" action="<?php echo base_url() ?>colleage_coach/insert_step1<?php if(isset($_GET['user_id'])) echo '?user_id='.$_GET['user_id'];?>" onsubmit="return getInsertData();">
       			<div class="reg-frm">
                 	<div class="frm clearfix">
                     	<div class="inner-frm fl">
-                        	<input type="text" placeholder="First Name" name="Coach_FirstName" id="Coach_FirstName">
+                        	<input type="text" placeholder="First Name" name="Coach_FirstName" id="Coach_FirstName" <?php if($userData!=null) {?>value="<?php echo $userData['FirstName']; }?>">
                          </div>
                         <div class="inner-frm fr">
-                        	<input type="text" placeholder="Last Name" name="Coach_LastName" id="Coach_LastName">
+                        	<input type="text" placeholder="Last Name" name="Coach_LastName" id="Coach_LastName" <?php if($userData!=null) {?>value="<?php echo $userData['LastName']; }?>">
                         </div>
                     </div>
                     <div class="frm clearfix">
                     	<div class="inner-frm fl">
-                        	<input type="text" placeholder="Title" name="Coach_Title" id="Coach_Title">
+                        	<input type="text" placeholder="Title" name="Coach_Title" id="Coach_Title" <?php if($universityData!=null) {?>value="<?php echo $universityData['Coach_Title']; }?>">
                          </div>
                         <div class="inner-frm fr">
-                        	<input type="text" placeholder="University/College" name="Coach_University" id="Coach_University">
+                        	<input type="text" placeholder="University/College" name="Coach_University" id="Coach_University" <?php if($universityData!=null) {?>value="<?php echo $universityData['Coach_University']; }?>">
                         </div>
                     </div>
                     <div class="frm clearfix">
@@ -44,27 +44,27 @@
                                 </option>
                              <?php  $country_info=get_table_details('state_list','StateID'); ?>
                                  <?php for($i=0;$i<count($country_info);$i++){ ?>
-                            	<option value="<?php echo $country_info[$i]['StateID']; ?>">
+                            	<option value="<?php echo $country_info[$i]['StateID']; ?>" <?php if($universityData!=null && $universityData['Coach_State']==$country_info[$i]['StateID']) {?> selected="selected"<?php }?>>
                                 	<?php echo $country_info[$i]['Name']; ?>
                                 </option>
                                 <?php } ?>
                             </select>
                          </div>
                         <div class="inner-frm fr">
-                        	<input type="text" placeholder="City" name="Coach_City" id="Coach_City">
+                        	<input type="text" placeholder="City" name="Coach_City" id="Coach_City" <?php if($universityData!=null) {?>value="<?php echo $universityData['Coach_City']; }?>">
                         </div>
                     </div>
                     
                     <div class="frm clearfix">
                     	<div class="inner-frm fl">
-                        	<input type="text" placeholder="Zip/Postal Code" name="Coach_Zip" id="Coach_Zip">
+                        	<input type="text" placeholder="Zip/Postal Code" name="Coach_Zip" id="Coach_Zip" <?php if($universityData!=null) {?>value="<?php echo $universityData['Coach_Zip']; }?>">
                          </div>
                         <div class="inner-frm fr">
                         	 <?php $Gender_details=get_table_details('coll_cotch_gender','Coll_GenderID'); ?>
                             <select name="Coach_GenderID" id="Coach_GenderID">
                             	<option value="0">Select Gender</option>
                                 <?php for($i=0;$i<count($Gender_details);$i++) { ?>
-                                <option value="<?php echo $Gender_details[$i]['Coll_GenderID']; ?>">
+                                <option value="<?php echo $Gender_details[$i]['Coll_GenderID']; ?>" <?php if($universityData!=null && $universityData['Coach_GenderID']==$Gender_details[$i]['Coll_GenderID']) {?> selected="selected"<?php }?>>
                                 <?php echo $Gender_details[$i]['Coll_GenderName']; ?></option>
                                 <?php } ?>
                             </select>
@@ -76,7 +76,7 @@
                             <select name="Coach_SportID" id="Coach_SportID">
                             	<option value="0">Select Sport</option>
                                 <?php for($i=0;$i<count($Sport_details);$i++) { ?>
-                                <option value="<?php echo $Sport_details[$i]['Coll_SportID']; ?>">
+                                <option value="<?php echo $Sport_details[$i]['Coll_SportID']; ?>" <?php if($universityData!=null && $universityData['Coach_SportID']==$Sport_details[$i]['Coll_SportID']) {?> selected="selected"<?php }?>>
                                 <?php echo $Sport_details[$i]['Coll_SportName']; ?></option>
                                 <?php } ?>
                             </select>
@@ -126,9 +126,9 @@
                     <div class="frm clearfix">
                     	<div class="inner-frm fl">
                     		<?php if($this->session->userdata('admin_register')){ ?>
-                    		<input type="text" placeholder="Email (E.g. Coach@somedomain.com)" name="UserEmail" id="UserEmail" onblur="check_email(this.value)" autocomplete="off">
+                    		<input type="text" placeholder="Email (E.g. Coach@somedomain.com)" name="UserEmail" id="UserEmail" onblur="check_email(this.value)" autocomplete="off" <?php if($userData!=null) {?>value="<?php echo $userData['UserEmail']; }?>">
                     		<?php } else { ?>
-                        	<input type="text" placeholder="Email (E.g. Coach@State.edu)" name="UserEmail" id="UserEmail" onblur="check_email(this.value)" autocomplete="off">
+                        	<input type="text" placeholder="Email (E.g. Coach@State.edu)" name="UserEmail" id="UserEmail" onblur="check_email(this.value)" autocomplete="off" <?php if($userData!=null) {?>value="<?php echo $userData['UserEmail']; }?>">
 
                     		<?php }?>
                          <span style="display:none; float:left;" id="unnsuccessemail" class="error_data">Invalid Email Address.</span>
@@ -142,7 +142,7 @@
                             
                          </div>
                         <div class="inner-frm fr">
-                        	<input type="text" placeholder="Verify your email address" id="VerifyEmail" onblur="confirmEmail()">
+                        	<input type="text" placeholder="Verify your email address" id="VerifyEmail" onblur="confirmEmail()" <?php if($userData!=null) {?>value="<?php echo $userData['UserEmail']; }?>">
                         </div>
                     </div>
                     <div class="frm clearfix">
@@ -213,7 +213,7 @@ function getInsertData()
 {
 
 	var flag = true;
-	var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+(edu|com|in)+$/;
+	var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+(edu|com|in|org)+$/;
 	 var email = $('#UserEmail').val();
 	 var confemail = $('#VerifyEmail').val();
      var cap_word=cap_word1.toLowerCase();

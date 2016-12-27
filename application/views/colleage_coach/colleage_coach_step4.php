@@ -20,7 +20,7 @@ Select from the categories below.</h3>
                         <?php echo $this->session->flashdata('successmessage');?>
                     </div>  
                 <?php }?>
-            	   <form id="basicForm" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered" action="<?php echo base_url(); ?>colleage_coach/insert_step4" onsubmit="return getInsertData();"
+            	   <form id="basicForm" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered" action="<?php echo base_url(); ?>colleage_coach/insert_step4<?php if(isset($_GET['user_id'])) echo '?user_id='.$_GET['user_id'];?>" onsubmit="return getInsertData();"
                 <div class="reg-frm">
                 	<div class="frm clearfix">
                     	<div class="inner-frm fl">
@@ -28,7 +28,7 @@ Select from the categories below.</h3>
                             <select name="Coach_GenderDetailsID" id="Coach_GenderDetailsID">
                             	<option value="0">Select Gender</option>
                                   <?php for($i=0;$i<count($Gen_details);$i++) { ?>
-                                <option value="<?php echo $Gen_details[$i]['Coll_GenID']; ?>">
+                                <option value="<?php echo $Gen_details[$i]['Coll_GenID']; ?>" <?php if($universityData!=null && $universityData['Coach_GenderDetailsID']==$Gen_details[$i]['Coll_GenID']) {?> selected="selected"<?php }?>>
                                 <?php echo $Gen_details[$i]['Coll_GenName']; ?></option>
                                 <?php } ?>
                             </select>
@@ -38,7 +38,7 @@ Select from the categories below.</h3>
                             <select name="Coach_SportDetailsID" id="Coach_SportDetailsID">
                             	<option value="0">Select Sport</option>
                                   <?php for($i=0;$i<count($Spo_details);$i++) { ?>
-                                <option value="<?php echo $Spo_details[$i]['Coll_SpoID']; ?>">
+                                <option value="<?php echo $Spo_details[$i]['Coll_SpoID']; ?>" <?php if($universityData!=null && $universityData['Coach_SportDetailsID']==$Spo_details[$i]['Coll_SpoID']) {?> selected="selected"<?php }?>>
                                 <?php echo $Spo_details[$i]['Coll_SpoName']; ?></option>
                                 <?php } ?>
                             </select>
@@ -46,14 +46,14 @@ Select from the categories below.</h3>
                     </div>
                     <div class="frm clearfix">
                     	<div class="inner-frm fl">
-                        	<input type="text" placeholder="Position" name="Coach_Position" id="Coach_Position">
+                        	<input type="text" placeholder="Position" name="Coach_Position" id="Coach_Position" <?php if($universityData!=null) {?>value="<?php echo $universityData['Coach_Position']; }?>">
                          </div>
                          <div class="inner-frm fr">
                         	 <?php $Min_Gpa_details=get_table_details('coll_cotch_min_gpa','Coll_Min_GpaID'); ?>
                             <select name="Coach_GpaID" id="Coach_GpaID">
                             	<option value="0">Select GPA </option>
                                  <?php for($i=0;$i<count($Min_Gpa_details);$i++) { ?>
-                                <option value="<?php echo $Min_Gpa_details[$i]['Coll_Min_GpaID']; ?>">
+                                <option value="<?php echo $Min_Gpa_details[$i]['Coll_Min_GpaID']; ?>" <?php if($universityData!=null && $universityData['Coach_GpaID']==$Min_Gpa_details[$i]['Coll_Min_GpaID']) {?> selected="selected"<?php }?>>
                                 <?php echo $Min_Gpa_details[$i]['Coll_Min_GpaName']; ?></option>
                                 <?php } ?>
                             </select>
@@ -67,7 +67,7 @@ Select from the categories below.</h3>
                             <select name="Coach_HeightID" id="Coach_HeightID">
                             	<option value="0">Select</option>
                                  <?php for($i=0;$i<count($Height_details);$i++) { ?>
-                                <option value="<?php echo $Height_details[$i]['Coll_Min_HeightID']; ?>">
+                                <option value="<?php echo $Height_details[$i]['Coll_Min_HeightID']; ?>" <?php if($universityData!=null && $universityData['Coach_HeightID']==$Height_details[$i]['Coll_Min_HeightID']) {?> selected="selected"<?php }?>>
                                 <?php echo $Height_details[$i]['Coll_Min_HeightName']; ?></option>
                                 <?php } ?>
                             </select>
@@ -77,7 +77,7 @@ Select from the categories below.</h3>
                             <select name="Coach_HeightIntcheID" id="Coach_HeightIntcheID">
                             	<option value="0">Inches</option>
                                  <?php for($i=0;$i<count($Height_details);$i++) { ?>
-                                <option value="<?php echo $Height_details[$i]['Coll_Min_HeightIncheID']; ?>">
+                                <option value="<?php echo $Height_details[$i]['Coll_Min_HeightIncheID']; ?>"<?php if($universityData!=null && $universityData['Coach_HeightIntcheID']==$Height_details[$i]['Coll_Min_HeightIncheID']) {?> selected="selected"<?php }?>>
                                 <?php echo $Height_details[$i]['Coll_Min_HeightIncheName']; ?></option>
                                 <?php } ?>
                             </select>
@@ -90,14 +90,14 @@ Select from the categories below.</h3>
                             <select name="Coach_WidthID" id="Coach_WidthID">
                             	<option value="0">Select Maximum Weight</option>
                                  <?php for($i=0;$i<count($Max_Height_details);$i++) { ?>
-                                <option value="<?php echo $Max_Height_details[$i]['Coll_Max_HeightID']; ?>">
+                                <option value="<?php echo $Max_Height_details[$i]['Coll_Max_HeightID']; ?>"<?php if($universityData!=null && $universityData['Coach_WidthID']==$Max_Height_details[$i]['Coll_Max_HeightID']) {?> selected="selected"<?php }?>>
                                 <?php echo $Max_Height_details[$i]['Coll_Max_HeightName']; ?></option>
                                 <?php } ?>
                             </select>
                          </div>
                     </div>
                     <div class="frm clearfix">
-                    	<textarea placeholder="Other specifics you would like to add?" name="Coach_Specific" id="Coach_Specific" maxlength="200"></textarea>
+                    	<textarea placeholder="Other specifics you would like to add?" name="Coach_Specific" id="Coach_Specific" maxlength="200"> <?php if($universityData!=null) { echo $universityData['Coach_Specific']; }?>"</textarea>
                      </div>
                     <div class="frm clearfix">
                     <div class="inner-frm">

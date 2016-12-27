@@ -19,7 +19,7 @@
                         <?php echo $this->session->flashdata('successmessage');?>
                     </div>  
                 <?php }?>
-                 <form id="basicForm" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered" action="<?php echo base_url(); ?>colleage_coach/insert_step2" onsubmit="return getInsertData();">
+                 <form id="basicForm" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered" action="<?php echo base_url(); ?>colleage_coach/insert_step2<?php if(isset($_GET['user_id'])) echo '?user_id='.$_GET['user_id'];?>" onsubmit="return getInsertData();">
                
                 <div class="reg-frm">
                 	<div class="frm clearfix">
@@ -28,21 +28,21 @@
                             <select name="Coach_DivisionID" id="Coach_DivisionID">
                                 <option value="0">Select Division</option>
                                  <?php for($i=0;$i<count($Division_details);$i++) { ?>
-                                <option value="<?php echo $Division_details[$i]['Coll_DivisionID']; ?>">
+                                <option value="<?php echo $Division_details[$i]['Coll_DivisionID']; ?>" <?php if($universityData!=null && $universityData['Coach_DivisionID']==$Division_details[$i]['Coll_DivisionID']) {?> selected="selected"<?php }?>>
                                 <?php echo $Division_details[$i]['Coll_DivisionName']; ?></option>
                                 <?php } ?>
                             </select>
                          </div>
                         <div class="inner-frm fr">
-                        	<input type="text" placeholder="Conference" name="Coach_Conferance" id="Coach_Conferance" >
+                        	<input type="text" placeholder="Conference" name="Coach_Conferance" id="Coach_Conferance" <?php if($universityData!=null) {?>value="<?php echo $universityData['Coach_Conferance']; }?>">
                         </div>
                     </div>
                     <div class="frm clearfix">
                     	<div class="inner-frm fl">
-                        	<input type="text" placeholder="This Season’s Record" name="Coach_SeasonRecord" id="Coach_SeasonRecord">
+                        	<input type="text" placeholder="This Season’s Record" name="Coach_SeasonRecord" id="Coach_SeasonRecord" <?php if($universityData!=null) {?>value="<?php echo $universityData['Coach_SeasonRecord']; }?>">
                          </div>
                         <div class="inner-frm fr">
-                        	<input type="text" placeholder="Career Record" name="Coach_CareerRecord" id="Coach_CareerRecord">
+                        	<input type="text" placeholder="Career Record" name="Coach_CareerRecord" id="Coach_CareerRecord" <?php if($universityData!=null) {?>value="<?php echo $universityData['Coach_CareerRecord']; }?>">
                         </div>
                     </div>
                     <div class="frm clearfix">
@@ -60,7 +60,7 @@
                                 <?php $Program_details=get_table_details('coll_cotch_program','Coll_ProgramID'); ?>                            
                                 <option value="<?php echo $null_val; ?>">Year at Current School</option>
                                   <?php for($i=0;$i<count($Program_details);$i++) { ?>
-                                <option value="<?php echo $Program_details[$i]['Coll_ProgramID']; ?>">
+                                <option value="<?php echo $Program_details[$i]['Coll_ProgramID']; ?>" <?php if($universityData!=null && $universityData['Coach_CurrentProgramID']==$Program_details[$i]['Coll_ProgramID']) {?> selected="selected"<?php }?>>
                                 <?php echo $Program_details[$i]['Coll_ProgramName']; ?></option>
                                 <?php } ?>
                             </select>
@@ -77,7 +77,7 @@
                             <select name="Coach_PlayID" id="<?php echo $coach_id; ?>">
                                 <option value="<?php echo $null_val; ?>">Number of Playoff Appearances</option>
                                  <?php for($i=0;$i<count($Playoff_details);$i++) { ?>
-                                <option value="<?php echo $Playoff_details[$i]['Coll_PlayoffID']; ?>">
+                                <option value="<?php echo $Playoff_details[$i]['Coll_PlayoffID']; ?>" <?php if($universityData!=null && $universityData['Coach_PlayID']==$Playoff_details[$i]['Coll_PlayoffID']) {?> selected="selected"<?php }?>>
                                 <?php echo $Playoff_details[$i]['Coll_PlayoffName']; ?></option>
                                 <?php } ?>
                             </select>
@@ -86,7 +86,7 @@
                     <div class="frm clearfix">
                     	<div class="inner-frm fl">
                         	
-                        	<input type="text" placeholder="Team Website(link)" name="Coach_TeamID" id="Coach_TeamID">
+                        	<input type="text" placeholder="Team Website(link)" name="Coach_TeamID" id="Coach_TeamID" <?php if($universityData!=null) {?>value="<?php echo $universityData['Coach_TeamID']; }?>">
               			<?php /*$Team_details=get_table_details('coll_cotch_team','Coll_TeamID'); ?>
                             <select name="Coach_TeamID" id="Coach_TeamID">
                                 <option value="0">Select Team</option>
@@ -98,11 +98,11 @@
 							?>
                          </div>
                         <div class="inner-frm fr">
-                        	<input type="text" placeholder="Team Recruiting Questionnarie(link)" name="Coach_CoachAward" id="Coach_CoachAward">
+                        	<input type="text" placeholder="Team Recruiting Questionnarie(link)" name="Coach_CoachAward" id="Coach_CoachAward" <?php if($universityData!=null) {?>value="<?php echo $universityData['Coach_CoachAward']; }?>">
                         </div>
                     </div>
                     <div class="frm clearfix">
-                    	<textarea placeholder="What makes your program unique?" name="Coach_Program" id="Coach_Program"></textarea>
+                    	<textarea placeholder="What makes your program unique?" name="Coach_Program" id="Coach_Program"> <?php if($universityData!=null) { echo $universityData['Coach_Program']; }?>"</textarea>
                     </div>
                     
                     <div class="frm clearfix">
