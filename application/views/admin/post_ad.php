@@ -52,7 +52,7 @@
                  <?php for($i=0;$i<count($user_list);$i++){ ?> 
                      <tr class="gradeC">
                         <td><?php echo $user_list[$i]['PostID']; ?></td>
-                        <td><?php echo $user_list[$i]['Po_Username']; ?></td>
+                        <td><a  href="<?php echo  $user_list[$i]['Coach_TeamId'];?>" target="_blank"><?php echo $user_list[$i]['Po_Username']; ?></a></td>
                         <td><?php echo $user_list[$i]['Po_Sport']; ?></td>
                         <td><?php echo date('Y-m-d',strtotime($user_list[$i]['Po_AddDate'])); ?></td>
                         <td><?php echo date('Y-m-d',strtotime($user_list[$i]['Po_ExpireDate'])); ?></td>

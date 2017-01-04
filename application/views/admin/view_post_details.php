@@ -9,7 +9,7 @@
                    <?php } ?> 
                 </a>
                 <div class="media-body">
-                  <h4 class="person-name"><?php echo $user_info['Po_Username']; ?> |  <?php echo $user_info['Po_SchoolName']; ?> </h4>
+                  <h4 class="person-name"><a href="<?php echo  $user_info['Coach_TeamId'];?>" target="_blank"><?php echo $user_info['Po_Username']; ?> |  <?php echo $user_info['Po_SchoolName']; ?> </a></h4>
                   <div class="text"><b>Expire on :</b><?php echo date('d M',strtotime($user_info['Po_ExpireDate'])); ?></div>
                   <div class="text"><b>Sport :</b>
 				  <?php if($user_info['Po_SportName']!="0" && $user_info['Po_SportName']!=NULL){

@@ -29,7 +29,7 @@ class Myrecruitads extends CI_Controller {
 		 }else if($User['UserType']=='1' || $User['UserType']=='2')
 		 {
 			$data['UserData']=$User;
-			$data['PostAds']=$this->myrecruit_model->AdsByPage(0,6);
+			$data['PostAds']=$this->myrecruit_model->AdsByPage(0,6, true);
 			$data['MainContent'] = $this->load->view('myrecruitads/student_ads',$data, true);
 	    	$this->load->view('template', $data);	
 		 }else if($User['UserType']=='3')
@@ -47,7 +47,7 @@ class Myrecruitads extends CI_Controller {
 	}
 	
 	public function adsbypage(){
-		$data['PostAds']=$this->myrecruit_model->AdsByPage($this->input->post('page'),6);
+		$data['PostAds']=$this->myrecruit_model->AdsByPage($this->input->post('page'),6, true);
 		if(count($data['PostAds'])){
 			$this->load->view('myrecruitads/student_ads2', $data);
 		}

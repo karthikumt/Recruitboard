@@ -78,6 +78,18 @@ class Admin_model extends CI_Model {
 		$this->db->where($ColumnName,$id);
 		$this->db->update($tablename,$array);	
 	}
+
+	function get_all_ads(){		
+		$sql = "SELECT cpa.*, cc.Coach_TeamId FROM coach_post_ads cpa LEFT JOIN colleage_coach cc ON (cc.UserID=cpa.UserID) ORDER BY PostId DESC";        
+        $query = $this->db->query($sql);
+		return $query->result_array();
+	}
+
+	function get_post_by_id($postId){
+		$sql = "SELECT cpa.*, cc.Coach_TeamId FROM coach_post_ads cpa LEFT JOIN colleage_coach cc ON (cc.UserID=cpa.UserID) WHERE PostId=".$postId." ORDER BY PostId DESC";        
+        $query = $this->db->query($sql);
+		return $query->row_array();
+	}
 	
 	
 }
