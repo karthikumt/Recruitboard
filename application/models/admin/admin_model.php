@@ -38,7 +38,7 @@ class Admin_model extends CI_Model {
 	function get_user_data($table_name, $column, $id)
     {
         $this->db->where($column, $id);
-		if($table_name == 'user_register') $this->db->limit(100);
+		//if($table_name == 'user_register') $this->db->limit(100);
         $result = $this->db->get($table_name)->result_array();
         return $result;
     }
