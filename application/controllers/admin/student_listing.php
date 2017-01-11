@@ -33,7 +33,7 @@ class Student_listing extends CI_Controller {
 	
 	public function view_coach(){
 		
-		$data['user_list'] = $this->admin_model->get_user_data('user_register', 'UserType', 3);
+		$data['user_list'] = $this->admin_model->get_college_coach();
 		$data['MainContent'] = $this->load->view('admin/view_coach', $data, true);
         $this->load->view('admin/template', $data);
 	}

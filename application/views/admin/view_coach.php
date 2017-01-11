@@ -70,18 +70,18 @@ function change_status(NewsID,Status){
                         <td><?php echo $user_list[$i]['UserID']; ?></td>
                         <td><?php echo $user_list[$i]['FirstName']; ?> <?php echo substr($user_list[$i]['LastName'],0,10); ?></td>
                         <td><?php echo $user_list[$i]['UserEmail']; ?></td>
-                        <td><?php $total=total_post_ad($user_list[$i]['UserID']);echo $total['TOTAL']; ?> </td>
-                        <?php $Users_info=get_user_data('colleage_coach',array('Coach_University','Coach_SportID','Coach_DivisionID'),$user_list[$i]['UserID']); ?>
-                        <td><?php echo substr($Users_info['Coach_University'],0,15); ?></td>
-                        <?php if($Users_info['Coach_DivisionID']!=0 && $Users_info['Coach_DivisionID']!=NULL){ 
-						 $getdata=get_row_data('coll_cotch_division','Coll_DivisionID',$Users_info['Coach_DivisionID']); ?>
-                         <td><?php echo $getdata['Coll_DivisionName']; ?></td>
+                        <td><?php echo $user_list[$i]['ads_posted']; ?> </td>
+                        <?php //$Users_info=get_user_data('colleage_coach',array('Coach_University','Coach_SportID','Coach_DivisionID'),$user_list[$i]['UserID']); ?>
+                        <td><?php echo substr($user_list[$i]['Coach_University'],0,15); ?></td>
+                        <?php if($user_list[$i]['Coach_DivisionID']!=0 && $user_list[$i]['Coach_DivisionID']!=NULL){ 
+						// $getdata=get_row_data('coll_cotch_division','Coll_DivisionID',$Users_info['Coach_DivisionID']); ?>
+                         <td><?php echo $user_list[$i]['Coll_DivisionName']; ?></td>
                          <?php } else { ?>
                          <td></td>
                          <?php } ?>
-						 <?php $getdata=get_row_data('coll_cotch_sport','Coll_SportID',$Users_info['Coach_SportID']); ?>
+						 <?php //$getdata=get_row_data('coll_cotch_sport','Coll_SportID',$Users_info['Coach_SportID']); ?>
                                
-                        <td><?php echo $getdata['Coll_SportName']; ?></td>
+                        <td><?php echo $user_list[$i]['Coll_SportName']; ?></td>
                        	<?php if($user_list[$i]['Step']==1){
 									$Step = "Register";
 								}if($user_list[$i]['Step']==2){
@@ -104,7 +104,7 @@ function change_status(NewsID,Status){
                                 <span id="ActSpan_<?php echo $user_list[$i]['UserID']; ?>"><a href="javascript:void(0);" onclick="change_status(<?php echo $user_list[$i]['UserID']; ?>,0);">In-active</a></span>
                             <?php }else{ ?>
                                 <span id="ActSpan_<?php echo $user_list[$i]['UserID']; ?>"><a href="javascript:void(0);" onclick="change_status(<?php echo $user_list[$i]['UserID']; ?>,1);">active</a></span>
-                            <?php } ?> | <a href="<?php echo base_url();?>colleage_coach?user_id=<?php echo $user_list[$i]['UserID']; ?>">Duplicate</a>
+                            <?php } ?> | <a href="<?php echo base_url();?>colleage_coach?user_id=<?php echo $user_list[$i]['UserID']; ?>" target="_blank">Duplicate</a>
                           
                             	
                         </td>

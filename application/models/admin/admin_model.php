@@ -38,7 +38,7 @@ class Admin_model extends CI_Model {
 	function get_user_data($table_name, $column, $id)
     {
         $this->db->where($column, $id);
-		//if($table_name == 'user_register') $this->db->limit(100);
+		if($table_name == 'user_register') $this->db->limit(100);
         $result = $this->db->get($table_name)->result_array();
         return $result;
     }
@@ -90,6 +90,14 @@ class Admin_model extends CI_Model {
         $query = $this->db->query($sql);
 		return $query->row_array();
 	}
+
+	function get_college_coach()
+    {
+    	$sql = "SELECT ur.UserID, ur.FirstName, ur.LastName , ur.UserEmail, ur.Step, ur.AdminStatus, cc.Coach_University, cc.Coach_SportID, cc.Coach_DivisionID, ccd.Coll_DivisionName, ccs.Coll_SportName FROM user_register ur LEFT JOIN colleage_coach cc ON (cc.UserId=ur.UserId) left join coll_cotch_division ccd ON (ccd.Coll_DivisionID=cc.Coach_DivisionID) LEFT JOIN coll_cotch_sport ccs ON (ccs.Coll_SportID=cc.Coach_SportID) WHERE ur.UserType=3";   
+    	//$sql = "SELECT * FROM user_register ur WHERE ur.UserType=3";   
+        $query = $this->db->query($sql);
+		return $query->result_array();
+    }
 	
 	
 }
