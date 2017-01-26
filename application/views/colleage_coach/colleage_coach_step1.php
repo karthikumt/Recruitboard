@@ -156,7 +156,9 @@
                         	 <input type="hidden" id="Pass_val" value=""/> 
                         </div>
                     </div>
+                    
                     <div class="frm captch-frm clearfix">
+                    	<?php if(!$this->session->userdata('admin_register')){ ?>
                         <div class="inner-frm fr">
                                 <div class="capcha">
                                     <div class="capcha-code" id="capcode">
@@ -171,11 +173,13 @@
                                       
                                 </div>
                             </div>
+                            <?php } ?>
                     	<div class="inner-frm fl">
                         	<input type="submit" value="Continue">
                          </div>
                         
                     </div>
+                    
                     <div class="frm">
                     	<p>* By clicking continue, you agree to our <a href="<?php echo base_url(); ?>termcondition" target="_blank">Terms and Conditions.</a></p>
                     </div>

@@ -15,17 +15,19 @@ class Colleage_coach extends CI_Controller {
 	
 	}
 	public function index()
-	{
-		$cap =  get_captcha();
-		$data = array(
-			 'captcha_time' => $cap['time'],
-			 'word' => $cap['word']
-			 );
-		$data['cap_img']=$cap['image'];	
-		$data['cap_word']=$cap['word'];	
-		if(isset($_GET['user_id'])){
+	{	
+		if(isset($_GET['user_id']) && $this->session->userdata('admin_register')){
 			$data['universityData'] = get_row_data('colleage_coach','UserID',$_GET['user_id']);
 			$data['userData'] = get_row_data('user_register','UserID',$_GET['user_id']);
+		}
+		if(!$this->session->userdata('admin_register')){
+			$cap =  get_captcha();
+			$data = array(
+				 'captcha_time' => $cap['time'],
+				 'word' => $cap['word']
+				 );
+			$data['cap_img']=$cap['image'];	
+			$data['cap_word']=$cap['word'];
 		}
         $data['MainContent'] = $this->load->view('colleage_coach/colleage_coach_step1',$data, true);
         $this->load->view('template', $data);		
@@ -69,6 +71,7 @@ class Colleage_coach extends CI_Controller {
 			$Email=$this->general_model->check_email();
 			if($Email==0)
 			{
+				//pr($this->session->userdata('admin_register'));
 				if($this->session->userdata('admin_register'))
 				{
 					$array=array(
@@ -459,7 +462,6 @@ class Colleage_coach extends CI_Controller {
 	
 		public function step5()
 	{
-		
 		 if($this->session->userdata('MyRecuritID'))
 		{
 		 $UserID=$this->session->userdata('MyRecuritID'); 
