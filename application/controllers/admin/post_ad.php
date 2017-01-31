@@ -31,6 +31,26 @@ class Post_ad extends CI_Controller {
 		$data['user_info'] = $this->admin_model->get_post_by_id($PostID);
         echo $this->load->view('admin/view_post_details', $data, true);
 	}
+	
+	public function edit_post($PostID)
+	{
+		if($_SERVER['REQUEST_METHOD']=='GET'){
+			$data['user_info'] = $this->admin_model->get_post_by_id($PostID);
+		    $data['gender_master'] = $this->db->query("SELECT * FROM coll_cotch_gender where status=1")->result_array();
+		    $data['height_feet_master'] = $this->db->query("SELECT * FROM coll_cotch_min_height where status=1")->result_array();
+		    $data['height_inch_master'] = $this->db->query("SELECT * FROM coll_cotch_min_heightinche where status=1")->result_array();
+		    $data['gpa_master'] = $this->db->query("SELECT * FROM coll_cotch_min_gpa where status=1")->result_array();
+		    $data['weight_master'] = $this->db->query("SELECT * FROM coll_cotch_max_height where status=1")->result_array();
+		    $data['sport_master'] = $this->db->query("SELECT * FROM coll_cotch_spo where status=1")->result_array();
+	        echo $this->load->view('admin/edit_post_details', $data, true);
+	    }else if($_SERVER['REQUEST_METHOD']=='POST'){
+
+	    	$sql="UPDATE coach_post_ads set Po_SportName=".$_POST['sport'].', Po_Position="'.$_POST["position"].'", Po_HeightID='.$_POST['height_feet'].", Po_IncheID=".$_POST['height_inch'].", Po_GpaID=".$_POST['gpa'].", Po_WeightID=".$_POST['weight'].', Po_Message="'.trim($_POST["additionInfo"]).'" WHERE PostID='.$PostID.';';
+	    	$query = $this->db->query($sql);
+	    	//pr(array($sql, $query));
+			redirect(base_url().'admin/post_ad');
+	    }
+	}
 
 
 	

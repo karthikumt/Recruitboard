@@ -57,7 +57,9 @@
                         <td><?php echo date('Y-m-d',strtotime($user_list[$i]['Po_AddDate'])); ?></td>
                         <td><?php echo date('Y-m-d',strtotime($user_list[$i]['Po_ExpireDate'])); ?></td>
                         <td class="center">                        	
-                            <a class="various fancybox.ajax" href="<?php echo base_url(); ?>admin/post_ad/view_post/<?php echo $user_list[$i]['PostID']; ?>">View Details</a>
+                            <a class="various fancybox.ajax" href="<?php echo base_url(); ?>admin/post_ad/view_post/<?php echo $user_list[$i]['PostID']; ?>">View</a>
+              |
+                            <a class="various fancybox.ajax" href="<?php echo base_url(); ?>admin/post_ad/edit_post/<?php echo $user_list[$i]['PostID']; ?>">Edit</a>
 							|	
                              <a href="<?php echo base_url();?>admin/post_ad/delete_post/<?php echo $user_list[$i]['PostID']; ?>" onclick="if(!confirm('Are you sure you want to delete this Ad?')){return false;}">Delete</a>
                                                      </td>                        
