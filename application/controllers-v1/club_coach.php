@@ -200,7 +200,7 @@ class Club_coach extends CI_Controller {
 			$UserID= $this->session->userdata('UserID'); 	
 		}
 		
-		$Club_VideoURL=$this->input->post('Club_VideoURL');
+		$Club_VideoURL=str_replace("http:","https:",$this->input->post('Club_VideoURL'));
 		$user_info['Step']='4';
 		$user_info['IsComplated']='1';
 		

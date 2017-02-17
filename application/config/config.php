@@ -16,7 +16,7 @@
 */
 
 // $config['base_url']	= 'http://myrecruitboard3.azurewebsites.net/';
-$config['base_url']	= 'http://recruitboard.loc/';
+$config['base_url']	= 'https://recruitboard.loc/';
 
 /*
 |--------------------------------------------------------------------------

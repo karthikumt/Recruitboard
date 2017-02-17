@@ -318,7 +318,7 @@ class Colleage_coach extends CI_Controller {
 			$UserID= $this->session->userdata('UserID'); 	
 		}
 		
-		$Coach_VideoURL=$this->input->post('Coach_VideoURL');
+		$Coach_VideoURL=str_replace("http:","https:",$this->input->post('Coach_VideoURL'));
 		
 		if($Coach_VideoURL!=""){
 		

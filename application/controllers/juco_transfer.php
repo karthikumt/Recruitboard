@@ -853,7 +853,7 @@ class Juco_transfer extends CI_Controller {
 			$UserID= $this->session->userdata('UserID'); 	
 		}
 		$User['Step']='10';
-		$Juco_info['Juco_VideoUrl']=$this->input->post('Juco_VideoUrl');
+		$Juco_info['Juco_VideoUrl']=str_replace("http:","https:",$this->input->post('Juco_VideoUrl'));
 		$Juco_info['Juco_Player']=$this->input->post('Juco_Player');
 		
 		/* if($Juco_info['Juco_VideoUrl']!=""){ */

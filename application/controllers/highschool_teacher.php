@@ -235,7 +235,7 @@ class Highschool_teacher extends CI_Controller {
 				
 						$update_info['UserID']=$UserID;
 						
-						$step3_info['Teach_VideoUrl']=$_POST['VideoUrl'];
+						$step3_info['Teach_VideoUrl']=str_replace("http:","https:",$_POST['VideoUrl']);
 						
 						$user_info['Step']='4';
 						$user_info['IsComplated']='1';

@@ -18,7 +18,7 @@ class General_setting extends CI_Controller {
 	
 		public function action(){
 	
-			$general_setting_info['YouTube_Url'] = $_POST['YouTube_Url'];
+			$general_setting_info['YouTube_Url'] = str_replace("http:","https:",$_POST['YouTube_Url']);
 			$general_setting_info['About_Us'] = $_POST['About_Us'];
 			$general_setting_info['Term_Condition'] = $_POST['Term_Condition'];
 			

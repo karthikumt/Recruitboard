@@ -5,13 +5,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700,600italic,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700,600italic,700italic,800,800italic' rel='stylesheet' type='text/css'>
 
-<link href='http://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,900,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,900,700italic,900italic' rel='stylesheet' type='text/css'>
 
-<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,700,300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,700,300' rel='stylesheet' type='text/css'>
 
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,500italic,700italic,700,900italic,900,300italic,300,100italic,100' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,500italic,700italic,700,900italic,900,300italic,300,100italic,100' rel='stylesheet' type='text/css'>
 
 
 <link rel="stylesheet" href="<?php echo base_url();?>css/jquery.fancybox.css" type="text/css" media="screen" />
@@ -105,13 +105,13 @@ $(document).ready(function() {
 
 </script>
 
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700,600italic,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700,600italic,700italic,800,800italic' rel='stylesheet' type='text/css'>
 
-<link href='http://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,900,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,900,700italic,900italic' rel='stylesheet' type='text/css'>
 
-<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,700,300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,700,300' rel='stylesheet' type='text/css'>
 
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,500italic,700italic,700,900italic,900,300italic,300,100italic,100' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,500italic,700italic,700,900italic,900,300italic,300,100italic,100' rel='stylesheet' type='text/css'>
 
 </head>
 <?php $CurrentClass= $this->router->fetch_class(); ?>

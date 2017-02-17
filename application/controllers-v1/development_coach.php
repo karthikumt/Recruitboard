@@ -191,7 +191,7 @@ class Development_coach extends CI_Controller {
 			$UserID= $this->session->userdata('UserID'); 	
 		}
 		
-		$Devel_VideoURL=$this->input->post('Devel_VideoURL');
+		$Devel_VideoURL=str_replace("http:","https:",$this->input->post('Devel_VideoURL'));
 		
 		if($Devel_VideoURL!=""){
 		

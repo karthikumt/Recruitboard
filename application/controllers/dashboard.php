@@ -515,9 +515,9 @@ class Dashboard extends CI_Controller {
 		$comment['UserID']=$UserID;
 		$comment['Cat_ID']=$_POST['Cat_ID'];
 		$comment['Comm_Title']=$_POST['Comm_Title'];
-		$comment['Comm_Desc']=$_POST['Comm_Desc'];
-		$comment['Comm_Link']=$_POST['Comm_Link'];
-		$comment['Comm_Video']=$_POST['Comm_Video'];
+		$comment['Comm_Desc']=str_replace("http:","https:",$_POST['Comm_Desc']);
+		$comment['Comm_Link']=str_replace("http:","https:",$_POST['Comm_Link']);
+		$comment['Comm_Video']=str_replace("http:","https:",$_POST['Comm_Video']);
 		$this->db->set('AddDate', 'NOW()', FALSE);	
 		$Last_Insertid=$this->general_model->insert_data('comment_box',$comment);
 		
@@ -828,7 +828,7 @@ class Dashboard extends CI_Controller {
 	public function upload_video()
 	{
 		$UserID=$this->session->userdata('MyRecuritID'); 
-		$Stu_info['Stu_VideoUrl']=$this->input->post('Stu_VideoURL');
+		$Stu_info['Stu_VideoUrl']=str_replace("http:","https:",$this->input->post('Stu_VideoURL'));
 		$update_file=array(
 					'UserID'=>$UserID
 				);			
@@ -839,7 +839,7 @@ class Dashboard extends CI_Controller {
 	public function upload_video_juco()
 	{
 		$UserID=$this->session->userdata('MyRecuritID'); 
-		$Stu_info['Juco_VideoURL']=$this->input->post('Juco_VideoURL');
+		$Stu_info['Juco_VideoURL']=str_replace("http:","https:",$this->input->post('Juco_VideoURL'));
 		$update_file=array(
 					'UserID'=>$UserID
 				);			
@@ -849,7 +849,7 @@ class Dashboard extends CI_Controller {
 	public function upload_video_coach()
 	{
 		$UserID=$this->session->userdata('MyRecuritID'); 
-		$Stu_info['Coach_VideoURL']=$this->input->post('Coach_VideoURL');
+		$Stu_info['Coach_VideoURL']=str_replace("http:","https:",$this->input->post('Coach_VideoURL'));
 		$update_file=array(
 					'UserID'=>$UserID
 				);			

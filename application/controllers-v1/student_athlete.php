@@ -857,7 +857,7 @@ class Student_athlete extends CI_Controller {
 			$UserID= $this->session->userdata('UserID'); 	
 		}
 		$User['Step']='10';
-		$Stu_info['Stu_VideoUrl']=$this->input->post('Stu_VideoUrl');
+		$Stu_info['Stu_VideoUrl']=str_replace("http:","https:",$this->input->post('Stu_VideoUrl'));
 		$Stu_info['Stu_Player']=$this->input->post('Stu_Player');
 		
 		/* if($Stu_info['Stu_VideoUrl']!=""){ */

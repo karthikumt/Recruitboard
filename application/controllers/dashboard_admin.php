@@ -325,7 +325,7 @@ class Dashboard_admin extends CI_Controller {
 	public function upload_video()
 	{
 		$UserID=$this->session->userdata('MyRecuritID'); 
-		$Stu_info['Stu_VideoUrl']=$this->input->post('Stu_VideoURL');
+		$Stu_info['Stu_VideoUrl']=str_replace("http:","https:",$this->input->post('Stu_VideoURL'));
 		$update_file=array(
 					'UserID'=>$UserID
 				);			
@@ -336,7 +336,7 @@ class Dashboard_admin extends CI_Controller {
 	public function upload_video_juco()
 	{
 		$UserID=$this->session->userdata('MyRecuritID'); 
-		$Stu_info['Juco_VideoURL']=$this->input->post('Juco_VideoURL');
+		$Stu_info['Juco_VideoURL']=str_replace("http:","https:",$this->input->post('Juco_VideoURL'));
 		$update_file=array(
 					'UserID'=>$UserID
 				);			
@@ -346,7 +346,7 @@ class Dashboard_admin extends CI_Controller {
 	public function upload_video_coach()
 	{
 		$UserID=$this->session->userdata('MyRecuritID'); 
-		$Stu_info['Coach_VideoURL']=$this->input->post('Coach_VideoURL');
+		$Stu_info['Coach_VideoURL']=str_replace("http:","https:",$this->input->post('Coach_VideoURL'));
 		$update_file=array(
 					'UserID'=>$UserID
 				);			

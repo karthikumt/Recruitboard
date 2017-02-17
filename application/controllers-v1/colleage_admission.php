@@ -244,7 +244,7 @@ class Colleage_admission extends CI_Controller {
 				
 						$update_info['UserID']=$UserID;
 						
-						$step3_info['Coll_VideoUrl']=$_POST['VideoUrl'];
+						$step3_info['Coll_VideoUrl']=str_replace("http:","https:",$_POST['VideoUrl']);
 						
 						$user_info['Step']='4';
 					}

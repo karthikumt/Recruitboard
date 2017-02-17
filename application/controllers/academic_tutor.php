@@ -251,7 +251,7 @@ class Academic_tutor extends CI_Controller {
 				
 						$update_info['UserID']=$UserID;
 						
-						$step3_info['Ac_VideoUrl']=$_POST['VideoUrl'];
+						$step3_info['Ac_VideoUrl']=str_replace("http:","https:",$_POST['VideoUrl']);
 						
 						$user_info['Step']='4';
 					}

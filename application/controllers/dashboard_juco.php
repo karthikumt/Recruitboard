@@ -198,9 +198,9 @@ class Dashboard_juco extends CI_Controller {
 		$comment['UserID']=$UserID;
 		$comment['Cat_ID']=$_POST['Cat_ID'];
 		$comment['Comm_Title']=$_POST['Comm_Title'];
-		$comment['Comm_Desc']=$_POST['Comm_Desc'];
-		$comment['Comm_Link']=$_POST['Comm_Link'];
-		$comment['Comm_Video']=$_POST['Comm_Video'];
+		$comment['Comm_Desc']=str_replace("http:","https:",$_POST['Comm_Desc']);
+		$comment['Comm_Link']=str_replace("http:","https:",$_POST['Comm_Link']);
+		$comment['Comm_Video']=str_replace("http:","https:",$_POST['Comm_Video']);
 		$this->db->set('AddDate', 'NOW()', FALSE);
 		$Last_Insertid=$this->general_model->insert_data('comment_box',$comment);
 		
