@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'us-cdbr-azure-northcentral-a.cleardb.com';
-$db['default']['username'] = 'b45a46a766df94';
-$db['default']['password'] = '224a4d7df255c3b';
-$db['default']['database'] = 'myrecruitboarddb';
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'moglix';
+$db['default']['database'] = 'mrdb';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = FALSE;

@@ -41,7 +41,7 @@
                                 	<span>Add URL</span>
                                    <!-- <div class="videourl"></div> -->
                                       <input type="text" name="VideoUrl" id="VideoUrl" />
-                                    <span style="font-size:10px; float:left;">URL Like:-<b>http://www.MyRecruitBoard.com</b></span>
+                                    <span style="font-size:10px; float:left;">URL Like:-<b>https://www.MyRecruitBoard.com</b></span>
                                 </div>
                             </div>
                         </div>

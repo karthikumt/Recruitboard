@@ -123,13 +123,13 @@ $(document).ready(function() {
                          $GetUrl=videoType($url);
         if($GetUrl=='youtube')
         { ?>
-                     <img src="http://img.youtube.com/vi/<?php echo getyoutubevidoid2($url); ?>/0.jpg" />
+                     <img src="https://img.youtube.com/vi/<?php echo getyoutubevidoid2($url); ?>/0.jpg" />
                                     <a class="play-icon" id="myvideo" href="javascript:void(0);">
                                         <img src="<?php echo base_url(); ?>images/play-icon.png" alt=""/>
                                        </a>
                                <?php } else if($GetUrl=='vimeo') { 
          $str = substr(strrchr($url, '/'), 1);
-         $vimeo = unserialize(file_get_contents("http://vimeo.com/api/v2/video/$str.php"));
+         $vimeo = unserialize(file_get_contents("https://vimeo.com/api/v2/video/$str.php"));
          ?>
          <img src="<?php echo $vimeo[0]['thumbnail_large'];?>" />
                                    <a class="play-icon" id="myvideo" href="javascript:void(0);">

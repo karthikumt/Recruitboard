@@ -1,0 +1,13 @@
+update myrecruitboarddb.academic_tutor set Ac_VideoUrl = REPLACE (Ac_VideoUrl, 'http:', 'https:');
+update myrecruitboarddb.club_coach set Club_VideoURL = REPLACE(Club_VideoURL, 'http:', 'https:');
+update myrecruitboarddb.colleage_admission set Coll_VideoUrl = REPLACE(Coll_VideoUrl, 'http:', 'https:');
+update myrecruitboarddb.colleage_coach set Coach_VideoURL = REPLACE(Coach_VideoURL, 'http:', 'https:');
+update myrecruitboarddb.comment_box set Comm_Video = REPLACE(Comm_Video, 'http:', 'https:');
+update myrecruitboarddb.developement_coach set Devel_VideoURL = REPLACE(Devel_VideoURL, 'http:', 'https:');
+update myrecruitboarddb.general_setting set YouTube_Url = REPLACE(YouTube_Url, 'http:', 'https:');
+update myrecruitboarddb.highschool_coach set HIgh_VideoUrl = REPLACE(HIgh_VideoUrl, 'http:', 'https:');
+update myrecruitboarddb.highschool_teacher set Teach_VideoUrl = REPLACE(Teach_VideoUrl, 'http:', 'https:');
+update myrecruitboarddb.student_athlete set Stu_VideoURL = REPLACE(Stu_VideoURL, 'http:', 'https:');
+update myrecruitboarddb.comment_box set Comm_Link = REPLACE(Comm_Link, 'http:', 'https:');
+update myrecruitboarddb.comment_box set Comm_Desc = REPLACE(Comm_Desc, 'http:', 'https:');
+update myrecruitboarddb.juco_transfer set Juco_VideoURL = REPLACE(Juco_VideoURL, 'http:', 'https:');

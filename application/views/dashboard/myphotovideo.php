@@ -19,7 +19,7 @@
 													$GetUrl=videoType($url);
 													if($GetUrl=='youtube')
 													{ ?>
-													<img src="http://img.youtube.com/vi/<?php echo getyoutubevidoid2($url); ?>/0.jpg" />
+													<img src="https://img.youtube.com/vi/<?php echo getyoutubevidoid2($url); ?>/0.jpg" />
 																					<a class="play-icon" id="MyVideo_<?php echo $i; ?>" href="javascript:void(0);">
 																					<img src="<?php echo base_url(); ?>images/play-icon2.png" alt=""/>            </a>
 												  <script>    
@@ -32,7 +32,7 @@
 												 </script>
 												  <?php } else if($GetUrl=='vimeo') { 
 												 $str = substr(strrchr($url, '/'), 1);
-												 $vimeo = unserialize(file_get_contents("http://vimeo.com/api/v2/video/$str.php"));
+												 $vimeo = unserialize(file_get_contents("https://vimeo.com/api/v2/video/$str.php"));
 												 ?>
 												 <img src="<?php echo $vimeo[0]['thumbnail_medium'];?>"  />
 												 <a class="play-icon" id="MyVideo_<?php echo $i; ?>" href="javascript:void(0);">
@@ -41,7 +41,7 @@
 												<script>    
 												   $('#MyVideo_<?php echo $i; ?>').magnificPopup({
 													items: {
-													 src: 'http://vimeo.com/<?php echo $str; ?>',
+													 src: 'https://vimeo.com/<?php echo $str; ?>',
 													 type: 'iframe'
 												  },
 												 });
@@ -74,8 +74,8 @@
     
 										}
 										?>
-													<img src="http://img.youtube.com/vi/<?php echo getyoutubevidoid2($url); ?>/0.jpg" />
-                                                <a class="play-icon fancybox.iframe" id="MyVideolist_<?php echo $i; ?>" href="http://www.youtube.com/embed/<?php echo $Youtubeid_data; ?>?autoplay=1&wmode=opaque">
+													<img src="https://img.youtube.com/vi/<?php echo getyoutubevidoid2($url); ?>/0.jpg" />
+                                                <a class="play-icon fancybox.iframe" id="MyVideolist_<?php echo $i; ?>" href="https://www.youtube.com/embed/<?php echo $Youtubeid_data; ?>?autoplay=1&wmode=opaque">
                                                 <img src="<?php echo base_url(); ?>images/play-icon2.png" alt=""/>            </a>
 												  <script>    
 												  $("#MyVideolist_<?php echo $i; ?>").fancybox({

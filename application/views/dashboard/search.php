@@ -375,12 +375,12 @@ $(document).ready(function() {
                                 
                                  <div class="frm clearfix" id="Link_details" style="display:none;">
                                      <div class="frm">
-                                        <input type="text" id="Comm_Link"  placeholder="http://www.myrecuirtboard.com" name="Comm_Link" />	
+                                        <input type="text" id="Comm_Link"  placeholder="https://www.myrecuirtboard.com" name="Comm_Link" />	
                                		 </div>	
                          </div>
                                  <div class="frm clearfix" id="Video_details" style="display:none;">
                                              <div class="frm">
-                                                <input type="text" id="Comm_Video" placeholder="http://www.myrecuirtboard.com"  name="Comm_Video"/>
+                                                <input type="text" id="Comm_Video" placeholder="https://www.myrecuirtboard.com"  name="Comm_Video"/>
                                              </div>
                                              <span class="warning">Note:-Upload Youtube or Vimeo Url OR Hudl </span>	
                                  </div>
@@ -458,7 +458,7 @@ $(document).ready(function() {
 													$GetUrl=videoType($url);
                                                     if($GetUrl=='youtube')
                                                     { ?>
-                                                    <img src="http://img.youtube.com/vi/<?php echo getyoutubevidoid2($url); ?>/0.jpg" />
+                                                    <img src="https://img.youtube.com/vi/<?php echo getyoutubevidoid2($url); ?>/0.jpg" />
                                                      <a class="play-icon" id="video_<?php echo $getdata[$j]['Comm_ID'];?>" href="javascript:void(0);">  
                                                       <img src="<?php echo base_url(); ?>images/play-icon2.png" alt=""/>            </a>
                                                       <script>    
@@ -471,7 +471,7 @@ $(document).ready(function() {
                                                      </script>
                                                       <?php } else if($GetUrl=='vimeo') { 
                                                      $str = substr(strrchr($url, '/'), 1);
-                                                     $vimeo = unserialize(file_get_contents("http://vimeo.com/api/v2/video/$str.php"));
+                                                     $vimeo = unserialize(file_get_contents("https://vimeo.com/api/v2/video/$str.php"));
                                                      ?>
                                                      <img src="<?php echo $vimeo[0]['thumbnail_medium'];?>" />
                                                      <a class="play-icon" id="video_<?php echo $getdata[$j]['Comm_ID'];?>" href="javascript:void(0);" >
@@ -481,7 +481,7 @@ $(document).ready(function() {
                                                        <script>    
                                                        $('#video_<?php echo $getdata[$j]['Comm_ID'];?>').magnificPopup({
                                                       items: {
-                                                         src: "http://vimeo.com/<?php echo $str; ?>",
+                                                         src: "https://vimeo.com/<?php echo $str; ?>",
                                                          type: 'iframe',
 														},
                                                      });
@@ -582,13 +582,13 @@ $(document).ready(function() {
 						 $GetUrl= videoType($url);
 					if($GetUrl=='youtube')
 					{ ?>
-                     <img src="http://img.youtube.com/vi/<?php echo getyoutubevidoid2($url); ?>/0.jpg" />
+                     <img src="https://img.youtube.com/vi/<?php echo getyoutubevidoid2($url); ?>/0.jpg" />
                                     <a class="play-icon" id="myvideo" href="javascript:void(0);">
                                         <img src="<?php echo base_url(); ?>images/play-icon.png" alt=""/>
                                        </a>
                                <?php } else if($GetUrl=='vimeo') { 
 											 $str = substr(strrchr($url, '/'), 1);
-											 $vimeo = unserialize(file_get_contents("http://vimeo.com/api/v2/video/$str.php"));
+											 $vimeo = unserialize(file_get_contents("https://vimeo.com/api/v2/video/$str.php"));
 											 ?>
 											 <img src="<?php echo $vimeo[0]['thumbnail_large'];?>"/>
          
@@ -765,7 +765,7 @@ $(document).ready(function() {
 													$GetUrl=videoType($url);
 													if($GetUrl=='youtube')
 													{ ?>
-													<img src="http://img.youtube.com/vi/<?php echo getyoutubevidoid2($url); ?>/0.jpg" />
+													<img src="https://img.youtube.com/vi/<?php echo getyoutubevidoid2($url); ?>/0.jpg" />
 																					<a class="play-icon" id="MyVideo_<?php echo $i; ?>" href="javascript:void(0);">
 																					<img src="<?php echo base_url(); ?>images/play-icon2.png" alt=""/>            </a>
 												  <script>    
@@ -778,7 +778,7 @@ $(document).ready(function() {
 												 </script>
 												  <?php } else if($GetUrl=='vimeo') { 
 												 $str = substr(strrchr($url, '/'), 1);
-												 $vimeo = unserialize(file_get_contents("http://vimeo.com/api/v2/video/$str.php"));
+												 $vimeo = unserialize(file_get_contents("https://vimeo.com/api/v2/video/$str.php"));
 												 ?>
 												 <img src="<?php echo $vimeo[0]['thumbnail_medium'];?>"  />
 												 <a class="play-icon" id="MyVideo_<?php echo $i; ?>" href="javascript:void(0);">
@@ -787,7 +787,7 @@ $(document).ready(function() {
 												<script>    
 												   $('#MyVideo_<?php echo $i; ?>').magnificPopup({
 													items: {
-													 src: 'http://vimeo.com/<?php echo $str; ?>',
+													 src: 'https://vimeo.com/<?php echo $str; ?>',
 													 type: 'iframe'
 												  },
 												 });

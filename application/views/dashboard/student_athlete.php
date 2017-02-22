@@ -176,7 +176,7 @@ $profile_link_url = base_url()."student_athlete_v?userid=".$this->session->userd
                                          <textarea rows="3"   readonly><?php echo $profile_link_url; ?></textarea>
                                     </div>
                                 </div>
-                                <?php $furl = "http://www.facebook.com/sharer.php?u=".$profile_link_url;  ?>
+                                <?php $furl = "https://www.facebook.com/sharer.php?u=".$profile_link_url;  ?>
                                 <a calss="fancybox-close"href="#" onclick="tshare('<?php echo $furl ?>')" >
                                     <img src="<?php echo base_url(); ?>images/social/facebook-32.png" alt="Facebook" />
                                 </a>
@@ -241,13 +241,13 @@ $profile_link_url = base_url()."student_athlete_v?userid=".$this->session->userd
                                     $GetUrl= videoType($url);
                                     if($GetUrl=='youtube')
                                     { ?>
-                                     <img src="http://img.youtube.com/vi/<?php echo getyoutubevidoid2($url); ?>/0.jpg" />
+                                     <img src="https://img.youtube.com/vi/<?php echo getyoutubevidoid2($url); ?>/0.jpg" />
                                                     <a class="play-icon" id="myvideo" href="javascript:void(0);">
                                                         <img src="<?php echo base_url(); ?>images/play-icon.png" alt=""/>
                                                      </a>
                                                <?php } else if($GetUrl=='vimeo') { 
                                              $str = substr(strrchr($url, '/'), 1);
-                                             $vimeo = unserialize(file_get_contents("http://vimeo.com/api/v2/video/$str.php"));
+                                             $vimeo = unserialize(file_get_contents("https://vimeo.com/api/v2/video/$str.php"));
                                              ?>
                                              <img src="<?php echo $vimeo[0]['thumbnail_large'];?>"/>
          
@@ -270,7 +270,7 @@ $profile_link_url = base_url()."student_athlete_v?userid=".$this->session->userd
                                         ?>
                                      <div id="athe"></div>
                                    
-                                   <a class="play-icon fancybox.iframe" id="myvideos" href="http://www.youtube.com/embed/<?php echo $Youtubeid; ?>?autoplay=1&wmode=opaque">
+                                   <a class="play-icon fancybox.iframe" id="myvideos" href="https://www.youtube.com/embed/<?php echo $Youtubeid; ?>?autoplay=1&wmode=opaque">
                                      
                                        <img src="<?php echo base_url(); ?>images/play-icon.png" alt="">
                                       
@@ -296,7 +296,7 @@ $profile_link_url = base_url()."student_athlete_v?userid=".$this->session->userd
                                     <form name="Video_url" id="Video_url" method="post" action="<?php echo base_url(); ?>dashboard/upload_video" onsubmit="return video_url();" enctype="multipart/form-data" >
                                     <div class="frm clearfix">
                                      <div class="frm" id="Video_Up" style="display:none;">
-                                        <input type="text" id="Stu_VideoURL" name="Stu_VideoURL" placeholder="http://www.myrecruitboard.com"/>
+                                        <input type="text" id="Stu_VideoURL" name="Stu_VideoURL" placeholder="https://www.myrecruitboard.com"/>
                                         <span class="warning">Note: Upload from YouTube, Vimeo, or Hudl</span>  
                                      </div>
                                     <div class="links fl">

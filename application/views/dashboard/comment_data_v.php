@@ -32,12 +32,12 @@
                                 
                                  <div class="frm clearfix" id="Link_details" style="display:none;">
                                      <div class="frm">
-                                        <input type="text" id="Comm_Link"  placeholder="http://www.myrecruitboard.com" name="Comm_Link" />	
+                                        <input type="text" id="Comm_Link"  placeholder="https://www.myrecruitboard.com" name="Comm_Link" />	
                                		 </div>	
                          </div>
                                  <div class="frm clearfix" id="Video_details" style="display:none;">
                                              <div class="frm">
-                                                <input type="text" id="Comm_Video" placeholder="http://www.myrecruitboard.com"  name="Comm_Video"/>
+                                                <input type="text" id="Comm_Video" placeholder="https://www.myrecruitboard.com"  name="Comm_Video"/>
                                              </div>
                                              <span class="warning">Note: Upload from YouTube, Vimeo, or Hudl</span>	
                                  </div>
@@ -127,7 +127,7 @@
 													$GetUrl=videoType($url);
                                                     if($GetUrl=='youtube')
                                                     { ?>
-                                                    <img src="http://img.youtube.com/vi/<?php echo getyoutubevidoid2($url); ?>/0.jpg" />
+                                                    <img src="https://img.youtube.com/vi/<?php echo getyoutubevidoid2($url); ?>/0.jpg" />
                                                      <a class="play-icon" id="video_<?php echo $getdata[$j]['Comm_ID'];?>" href="javascript:void(0);">  
                                                       <img src="<?php echo base_url(); ?>images/play-icon2.png" alt=""/>            </a>
                                                       <script>    
@@ -140,7 +140,7 @@
                                                      </script>
                                                       <?php } else if($GetUrl=='vimeo') { 
                                                      $str = substr(strrchr($url, '/'), 1);
-                                                     $vimeo = unserialize(file_get_contents("http://vimeo.com/api/v2/video/$str.php"));
+                                                     $vimeo = unserialize(file_get_contents("https://vimeo.com/api/v2/video/$str.php"));
                                                      ?>
                                                      <img src="<?php echo $vimeo[0]['thumbnail_medium'];?>" />
                                                      <a class="play-icon" id="video_<?php echo $getdata[$j]['Comm_ID'];?>" href="javascript:void(0);" >
@@ -150,7 +150,7 @@
                                                        <script>    
                                                        $('#video_<?php echo $getdata[$j]['Comm_ID'];?>').magnificPopup({
                                                       items: {
-                                                         src: "http://vimeo.com/<?php echo $str; ?>",
+                                                         src: "https://vimeo.com/<?php echo $str; ?>",
                                                          type: 'iframe',
 														},
                                                      });
@@ -193,8 +193,8 @@
     
 										}
 										?>
-                                                   <img src="http://img.youtube.com/vi/<?php echo getyoutubevidoid2($url); ?>/0.jpg" />
-                                                     <a class="play-icon fancybox.iframe" id="video_data<?php echo $getdata[$j]['Comm_ID'];?>" href="http://www.youtube.com/embed/<?php echo $Youtubeid; ?>?autoplay=1&wmode=opaque">  
+                                                   <img src="https://img.youtube.com/vi/<?php echo getyoutubevidoid2($url); ?>/0.jpg" />
+                                                     <a class="play-icon fancybox.iframe" id="video_data<?php echo $getdata[$j]['Comm_ID'];?>" href="https://www.youtube.com/embed/<?php echo $Youtubeid; ?>?autoplay=1&wmode=opaque">  
                                                       <img src="<?php echo base_url(); ?>images/play-icon2.png" alt=""/>            </a>
                                                       <script>    
                                                        $('#video_data<?php echo $getdata[$j]['Comm_ID'];?>').fancybox({
